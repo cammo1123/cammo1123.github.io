@@ -103,16 +103,6 @@ body {
 	overflow: hidden;
 }
 
-.backgroundGradient {
-	overflow: hidden;
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	transition: 0.5s ease;
-}
-
 nav {
 	position: fixed;
 	width: 100%;
@@ -120,17 +110,54 @@ nav {
 	z-index: 99;
 }
 
-nav > ul {
+li.different {
+	border: none;
+	position: relative;
+}
+
+li.different:hover {
+	border: none;
+}
+
+li:hover {
+	border-bottom: 5px solid #ffffff;
+}
+
+.different::after {
+	content: "";
+	position: absolute;
+	width: 0px;
+	height: 2px;
+	left: 50%;
+	bottom: 0;
+	background-color: white;
+	transition: all ease-in-out 0.2s;
+}
+
+.different:hover::after {
+	width: 100%;
+	left: 0;
+}
+
+nav > ul > li {
 	float: right;
-	margin: 0px 10px;
 	list-style: none;
-	padding: 14px 16px;
+	margin: 14px 16px;
+}
+
+li > a {
+	text-decoration: none;
+}
+
+nav > ul {
+	margin: 0 10px;
 }
 
 /* Repo Show */
 
 .repos {
 	display: flex;
+	border-top: #ffffff80 1px solid;
 	flex-wrap: wrap;
 }
 
