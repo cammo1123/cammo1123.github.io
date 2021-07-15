@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto");
+
+:root {
+	--button: 0px;
+	--x1: 3px;
+	--y1: 3px;
+	--b1: 6px;
+	--shadowOffset: 20%;
+	--v: 90%;
+	--backgroundColour: hsla(0, 0%, var(--v), 1);
+	--shadowColour: hsla(0, 0%, calc(var(--v) - var(--shadowOffset)), 1);
+	--highlightColour: hsla(0, 0%, calc(var(--v) + var(--shadowOffset) / 2), 1);
+}
+
+* {
+	font-family: "Roboto", sans-serif;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	background-color: var(--backgroundColour);
+}
+
+.header {
+	overflow: hidden;
+	width: 100%;
+	padding: 4px 0px;
+	background-color: var(--backgroundColour);
+
+	height: fit-content;
+}
+
+.button {
+	float: right;
+	border-radius: 10px;
+	height: 45px;
+	min-width: 45px;
+	background: var(--backgroundColour);
+	margin: 10px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: var(--x1) var(--y1) var(--b1) var(--shadowColour), calc(var(--x1) * -1) calc(var(--y1) * -1) calc(var(--x1) + 1px) var(--highlightColour);
+}
+
+.button > img {
+	max-width: 30px;
+	max-height: 30px;
+	position: relative;
+	left: 0px;
+	bottom: 0px;
+}
+
+.button > a {
+	float: right;
+	text-align: center;
+	text-decoration: none;
+	padding: 14px 2em;
+}
+
+.button:hover {
+	box-shadow: inset calc(var(--x1) - 1px) calc(var(--y1) - 1px) calc(var(--b1) - 1px) var(--shadowColour), inset calc(var(--x1) * -1) calc(var(--y1) * -1) calc(var(--x1) + 1px) var(--highlightColour);
+}
+
+/* Scheme Selector */
+
+.schemeSelector {
+	display: inline;
+	margin: 10px;
+	cursor: pointer;
+	position: relative;
+	width: calc(76px + var(--button) * 4);
+	float: right;
+	height: calc(45px + var(--button) * 2);
+	top: calc(-1 * var(--button));
+}
+
+.schemeSelector > input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+	margin: 0;
+	position: absolute;
+}
+
+.slider {
+	width: calc(45px + var(--button) * 2 - 16px);
+	height: calc(45px + var(--button) * 2 - 16px);
+	position: absolute;
+
+	margin: 8px;
+	z-index: 1;
+	background-color: var(--backgroundColour);
+	box-shadow: var(--x1) var(--y1) var(--b1) var(--shadowColour), calc(var(--x1) * -1) calc(var(--y1) * -1) calc(var(--x1) + 1px) var(--highlightColour);
+
+	border-radius: 10px;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+input:checked + .slider {
+	-webkit-transform: translateX(calc(100% + var(--button) + 2px));
+	-ms-transform: translateX(calc(100% + var(--button) + 2px));
+	transform: translateX(calc(100% + var(--button) + 2px));
+}
+
+input:checked + .slider:before {
+	content: "ON";
+}
+
+input + .slider:before {
+	content: "OFF";
+}
+
+.labels {
+	position: relative;
+	height: 100%;
+	box-shadow: inset calc(var(--x1) - 1px) calc(var(--y1) - 1px) calc(var(--b1) - 1px) var(--shadowColour), inset calc(var(--x1) * -1) calc(var(--y1) * -1) calc(var(--x1) + 1px) var(--highlightColour);
+	border-radius: 10px;
+	align-items: cente;
+}
+
+.labels > img {
+	display: flex;
+	float: left;
+	height: 50%;
+	max-width: 50%;
+	pointer-events: none;
+
+	justify-content: center;
+	align-items: center;
+}
