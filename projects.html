@@ -8,16 +8,44 @@
     <link rel="stylesheet" href="style.css" />
     <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script src="script.js"></script>
 
     <title>Cameron Youell | Projects</title>
 </head>
 
 <body>
-    <div class="sidebar" id="nav-placeholder"></div>
-    <script>
-        $("#nav-placeholder").load("nav.html");
-    </script>
+    <div class="sidebar" id="nav-placeholder">
+        <div class="cover">
+            <div id="top_fill"></div>
+            <div class="active_cover" id="active_cover">
+                <div class="child"></div>
+                <div class="child2"></div>
+            </div>
+            <div id="bottom_fill"></div>
+        </div>
+        <ul class="nav_list">
+            <div class="item_container" id="index">
+                <li>
+                    <a tabindex="0">
+                        <i class="bx bx-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+            </div>
+            <div class="item_container" id="projects">
+                <li>
+                    <a tabindex="0">
+                        <i class="bx bx-grid-alt"></i>
+                        <span>Projects</span>
+                    </a>
+                </li>
+            </div>
+            <button id="collapse"><i class='bx bxs-chevron-left'></i></button>
+            <span id="copyright">Copyright (c) Cameron Youell <br>
+				2021, All Rights Reserved
+			</span>
+            <button id="adjust"><i class='bx bx-adjust'></i></button>
+        </ul>
+    </div>
     <style>
         .active li a {
             color: var(--text-color) !important;
@@ -29,6 +57,8 @@
         <a href="https://github.com/cammo1123/Plex-Player"><img src="https://github-link-card.s3.ap-northeast-1.amazonaws.com/cammo1123/Plex-Player.png"></a>
         <a href="https://github.com/cammo1123/sentral_companion"><img src="https://github-link-card.s3.ap-northeast-1.amazonaws.com/cammo1123/sentral_companion.png" width="460px"></a>
     </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
