@@ -69,7 +69,7 @@
         }
 
         function setPage(page) {
-            let pos = $(`#${page}`).offset()
+            // let pos = $(`#${page}`).offset()
 
             $(`#${prevID}`).removeClass("active")
             $(`#${page}`).addClass("active")
@@ -78,9 +78,9 @@
 
             let my_pos_height = my_pos.height() + 24
 
-            $("#top_fill").css("bottom", ((window.innerHeight - (pos.top - my_pos.height() + 24)) - 14) + scrollY)
-            $("#bottom_fill").css("top", ((my_pos_height + (pos.top - my_pos.height() + 24)) + 14) - scrollY)
-            $("#active_cover").css("top", ((pos.top - my_pos.height() + 24) + 14) - scrollY);
+            $("#top_fill").css("bottom", ((window.innerHeight - (4 - my_pos.height() + 24)) - 14) + scrollY)
+            $("#bottom_fill").css("top", ((my_pos_height + (4 - my_pos.height() + 24)) + 14) - scrollY)
+            $("#active_cover").css("top", ((4 - my_pos.height() + 24) + 14) - scrollY);
 
             prevID = this.id;
         }
