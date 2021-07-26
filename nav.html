@@ -1,0 +1,115 @@
+<div class="cover">
+    <div id="top_fill"></div>
+    <div class="active_cover" id="active_cover">
+        <div class="child"></div>
+        <div class="child2"></div>
+    </div>
+    <div id="bottom_fill"></div>
+</div>
+<ul class="nav_list">
+    <div class="item_container" id="index">
+        <li>
+            <a tabindex="0">
+                <i class="bx bx-grid-alt"></i>
+                <span>Home</span>
+            </a>
+        </li>
+    </div>
+    <div class="item_container" id="projects">
+        <li>
+            <a tabindex="0">
+                <i class="bx bx-home"></i>
+                <span>Projects</span>
+            </a>
+        </li>
+    </div>
+    <button id="collapse"><i class='bx bxs-chevron-left'></i></button>
+    <button id="adjust"><i class='bx bx-adjust'></i></button>
+
+    <script>
+        let prevID = ""
+        $("#collapse").click(() => {
+            collapsed = getCookie("collapsed") == "true"
+            setCollapsed(!collapsed)
+        })
+
+        $("#adjust").click(() => {
+            dark = getCookie("dark") == "true"
+            setDark(!dark)
+        })
+
+        function setDark(dark) {
+            console.log(getCookie("dark"))
+            if (!dark) {
+                document.documentElement.style.setProperty('--background-color', "#fff");
+                document.documentElement.style.setProperty('--text-color', "#000");
+            } else {
+                document.documentElement.style.setProperty('--background-color', "#181a1b");
+                document.documentElement.style.setProperty('--text-color', "#e8e6e3");
+            }
+
+            setCookie("dark", `${dark}`, 30);
+        }
+
+        function setCollapsed(collapsed) {
+            console.log(getCookie("collapsed"))
+            if (!collapsed) {
+                document.documentElement.style.setProperty('--toolbar-width', "300px");
+                document.documentElement.style.setProperty('--toolbar-text', "unset");
+
+                $("#collapse").html("<i class='bx bxs-chevron-left'></i>")
+            } else {
+                document.documentElement.style.setProperty('--toolbar-width', "50px");
+                document.documentElement.style.setProperty('--toolbar-text', "none");
+                $("#collapse").html("<i class='bx bxs-chevron-right'></i>")
+
+            }
+
+            setCookie("collapsed", `${collapsed}`, 30);
+        }
+
+        function setPage(page) {
+            let pos = $(`#${page}`).offset()
+
+            $(`#${prevID}`).removeClass("active")
+            $(`#${page}`).addClass("active")
+
+            let my_pos = $("#active_cover")
+
+            let my_pos_height = my_pos.height() + 24
+
+            $("#top_fill").css("bottom", ((window.innerHeight - (pos.top - my_pos.height() + 24)) - 14) + scrollY)
+            $("#bottom_fill").css("top", ((my_pos_height + (pos.top - my_pos.height() + 24)) + 14) - scrollY)
+            $("#active_cover").css("top", ((pos.top - my_pos.height() + 24) + 14) - scrollY);
+
+            prevID = this.id;
+        }
+
+        let path = window.location.pathname;
+        let page = path.split("/").pop().split(".html")[0];
+        let links = document.getElementsByClassName("item_container");
+
+        setPage(page);
+
+        collapsed = getCookie("collapsed") == "true";
+        setCollapsed(collapsed);
+
+        dark = getCookie("dark") == "true";
+        setDark(dark);
+
+
+        function addAnimations() {
+            $(".cover").children().addClass("transition")
+        }
+
+        window.addEventListener('resize', () => {
+            setPage(page);
+        });
+
+
+        $(".item_container").click(function(e) {
+            setPage(this.id);
+
+            window.location.href = (`${this.id}.html`)
+        });
+    </script>
