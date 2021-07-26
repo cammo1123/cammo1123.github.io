@@ -10,7 +10,7 @@
     <div class="item_container" id="index">
         <li>
             <a tabindex="0">
-                <i class="bx bx-grid-alt"></i>
+                <i class="bx bx-home"></i>
                 <span>Home</span>
             </a>
         </li>
@@ -18,7 +18,7 @@
     <div class="item_container" id="projects">
         <li>
             <a tabindex="0">
-                <i class="bx bx-home"></i>
+                <i class="bx bx-grid-alt"></i>
                 <span>Projects</span>
             </a>
         </li>
@@ -39,7 +39,6 @@
         })
 
         function setDark(dark) {
-            console.log(getCookie("dark"))
             if (!dark) {
                 document.documentElement.style.setProperty('--background-color', "#fff");
                 document.documentElement.style.setProperty('--text-color', "#000");
@@ -52,7 +51,6 @@
         }
 
         function setCollapsed(collapsed) {
-            console.log(getCookie("collapsed"))
             if (!collapsed) {
                 document.documentElement.style.setProperty('--toolbar-width', "300px");
                 document.documentElement.style.setProperty('--toolbar-text', "unset");
@@ -69,9 +67,12 @@
         }
 
         function setPage(page) {
-            let pos = $(`#${page}`).offset()
+            let pos = page == "" ? $(`#index`).offset() : $(`#${page}`).offset();
 
-            $(`#${prevID}`).removeClass("active")
+            if (prevID != "") {
+                $(`#${prevID}`).removeClass("active")
+            }
+
             $(`#${page}`).addClass("active")
 
             let my_pos = $("#active_cover")

@@ -20,8 +20,8 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
-body>* {
-    padding-left: calc(var(--toolbar-padding) + var(--toolbar-width) + 20px);
+.content {
+    margin-left: calc(var(--toolbar-padding) + var(--toolbar-width) + 20px);
 }
 
 .gradient {
