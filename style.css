@@ -10,6 +10,7 @@ body {
     --toolbar-padding: 10px;
     --toolbar-text: none;
     --background-color: #fff;
+    --nav-color: transparent;
     --text-color: #000;
     --text-color-light: #fff;
 }
@@ -22,6 +23,17 @@ body {
 
 .content {
     margin-left: calc(var(--toolbar-padding) + var(--toolbar-width) + 20px);
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .content {
+        margin-left: calc(var(--toolbar-padding) + 70px);
+        margin-right: 20px;
+    }
+    .sidebar {
+        background: var(--nav-color);
+    }
 }
 
 .gradient {
@@ -258,6 +270,18 @@ body {
     padding-left: 2px;
 }
 
+#copyright {
+    position: absolute;
+    text-align: center;
+    display: var(--toolbar-text);
+    width: 200px;
+    border: none;
+    bottom: calc(var(--toolbar-padding) + 5px);
+    left: 50px;
+    font-size: x-small;
+    color: var(--text-color-light)
+}
+
 #adjust {
     position: absolute;
     display: var(--toolbar-text);
@@ -277,4 +301,9 @@ body {
     text-decoration: none;
     justify-content: center;
     height: 100%;
+}
+
+img {
+    width: 100%;
+    max-width: 460px;
 }
