@@ -326,3 +326,7 @@ img {
 	text-decoration: none;
 	color: var(--text-color-light);
 }
+
+.tx-center {
+	text-align: center;
+}
