@@ -63,21 +63,25 @@ function setCollapsed(collapsed) {
 function setPage(page) {
 	let pos = page == "" ? $(`#index`).offset() : $(`#${page}`).offset();
 
-	if (prevID != "") {
-		$(`#${prevID}`).removeClass("active");
+	if (pos != undefined) {
+		if (prevID != "") {
+			$(`#${prevID}`).removeClass("active");
+		}
+
+		$(`#${page}`).addClass("active");
+
+		let my_pos = $("#active_cover");
+
+		let my_pos_height = my_pos.height() + 24;
+
+		$("#top_fill").css("bottom", window.innerHeight - (pos.top - my_pos.height() + 24) - 14 + scrollY);
+		$("#bottom_fill").css("top", my_pos_height + (pos.top - my_pos.height() + 24) + 14 - scrollY);
+		$("#active_cover").css("top", pos.top - my_pos.height() + 24 + 14 - scrollY);
+		prevID = this.id;
+		return 1;
+	} else {
+		return -1;
 	}
-
-	$(`#${page}`).addClass("active");
-
-	let my_pos = $("#active_cover");
-
-	let my_pos_height = my_pos.height() + 24;
-
-	$("#top_fill").css("bottom", window.innerHeight - (pos.top - my_pos.height() + 24) - 14 + scrollY);
-	$("#bottom_fill").css("top", my_pos_height + (pos.top - my_pos.height() + 24) + 14 - scrollY);
-	$("#active_cover").css("top", pos.top - my_pos.height() + 24 + 14 - scrollY);
-
-	prevID = this.id;
 }
 
 let path = window.location.pathname;
