@@ -105,8 +105,8 @@ $(".item_container").click(function (e) {
 	setPage(this.id);
 
 	if (this.id == "index") {
-		window.location.href = "..";
+		window.location.href = "https://cammo1123.github.io/";
 	} else {
-		window.location.href = `/${this.id}`;
+		window.location.href = `https://cammo1123.github.io/${this.id}`;
 	}
 });
