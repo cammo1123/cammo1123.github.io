@@ -104,6 +104,8 @@ window.addEventListener("resize", () => {
 $(".item_container").click(function (e) {
 	setPage(this.id);
 
+	console.log(this.id);
+
 	if (this.id == "index") {
 		window.location.href = "https://cammo1123.github.io/";
 	} else {
