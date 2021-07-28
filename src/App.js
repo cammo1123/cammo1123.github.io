@@ -2,19 +2,24 @@ import "./App.css";
 import React from "react";
 import "./styles/boxicons-2.0.9/css/boxicons.min.css";
 import $ from "jquery";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import ReactGA from 'react-ga';
-ReactGA.initialize('G-E5FTE66HSQ');
-ReactGA.pageview(window.location.pathname + window.location.search);
+import { createBrowserHistory } from "history";
+import { Router, Switch, Route, Link } from "react-router-dom";
+import ReactGA from "react-ga";
+ReactGA.initialize("G-E5FTE66HSQ");
 
 setCollapsed(null, true);
 setDark(null, true);
 
+let history = createBrowserHistory();
 
+history.listen((location) => {
+	window.ga("set", "page", location.pathname + location.search);
+	window.ga("send", "pageview");
+});
 
 export default function App() {
 	return (
-		<Router>
+		<Router history={history}>
 			<div>
 				<nav>
 					<div className="cover">
@@ -148,7 +153,9 @@ function toTitleCase(str) {
 }
 
 function setPage(page, animations = true) {
-	if (!animations) {removeAnimations()};
+	if (!animations) {
+		removeAnimations();
+	}
 	page = page === "" ? "#home" : "#" + page;
 	let pos = $(page).offset();
 
@@ -167,8 +174,10 @@ function setPage(page, animations = true) {
 		$("#bottom_fill").css("top", my_pos_height + (pos.top - my_pos.height() + 24) + 14 - window.pageYOffset);
 		$("#active_cover").css("top", pos.top - my_pos.height() + 24 + 14 - window.pageYOffset);
 		prevID = page.slice(1);
-	} 
-	if (!animations) {addAnimations()};
+	}
+	if (!animations) {
+		addAnimations();
+	}
 }
 
 function Home() {
@@ -234,13 +243,11 @@ function Socials() {
 function Projects() {
 	setPage("projects");
 	return (
-		
 		<div className="content">
 			<h1> Current Projects </h1>
 			<div className="githubGrid">
 				{githubCard("PlexPlayer", "A simple player for non Plex premium users", "https://github.com/cammo1123/Plex-Player")}
 				{githubCard("Sentral_Companion", "ARCHIVED - A Companion app for https://web2.schoolName.schools.nsw.edu.au/portal ", "https://github.com/cammo1123/sentral_companion")}
-
 			</div>
 		</div>
 	);
@@ -249,7 +256,9 @@ function Projects() {
 function githubCard(name, des, link) {
 	return (
 		<a alt={name} href={link} target="_blank" rel="noreferrer" className="githubCard">
-			<div><img alt="github avatar" src="https://avatars.githubusercontent.com/u/36214028" /></div>
+			<div>
+				<img alt="github avatar" src="https://avatars.githubusercontent.com/u/36214028" />
+			</div>
 			<div>
 				<h1>cammo1123/{name}</h1>
 				<p>{des}</p>
@@ -257,4 +266,3 @@ function githubCard(name, des, link) {
 		</a>
 	);
 }
-
