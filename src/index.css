@@ -9,6 +9,7 @@
 	--nav-color: transparent;
 	--text-color: #000;
 	--text-color-light: #fff;
+	--nav-time: 0.1s;
 }
 
 body {
@@ -216,7 +217,7 @@ nav ul li.active a {
 
 #top_fill {
 	top: 0;
-	bottom: 948px;
+	bottom: 974px;
 }
 
 #bottom_fill {
@@ -367,6 +368,6 @@ img {
 	color: var(--text-color) !important;
 }
 
-.transition * {
-	transition: all 0.1s linear;
+.cover * {
+	transition: all var(--nav-time) linear;
 }

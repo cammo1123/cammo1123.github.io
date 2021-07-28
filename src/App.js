@@ -14,7 +14,7 @@ export default function App() {
 		<Router>
 			<div>
 				<nav>
-					<div className="cover transition">
+					<div className="cover">
 						<div id="top_fill"></div>
 						<div className="active_cover" id="active_cover">
 							<div className="child"></div>
@@ -69,12 +69,14 @@ function navItem(id, iconName, name = toTitleCase(id), path = "/" + id) {
 	);
 }
 
+setCollapsed(null, true);
+
 function addAnimations() {
-	$(".cover").children().addClass("transition");
+	document.documentElement.style.setProperty("--nav-time", "0.1s");
 }
 
 function removeAnimations() {
-	$(".cover").children().addClass("transition");
+	document.documentElement.style.setProperty("--nav-time", "0s");
 }
 
 let prevID = "";
@@ -113,13 +115,13 @@ function setCollapsed(NULL, dontInvert = false) {
 		document.documentElement.style.setProperty("--toolbar-text", "unset");
 		document.documentElement.style.setProperty("--nav-color", "#23a6d5");
 
-		$("#collapse").html("<i className='bx bxs-chevron-left'></i>");
+		$("#collapse").html("<i class='bx bxs-chevron-left'></i>");
 	} else {
 		document.documentElement.style.setProperty("--toolbar-width", "50px");
 		document.documentElement.style.setProperty("--toolbar-text", "none");
 		document.documentElement.style.setProperty("--nav-color", "transparent");
 
-		$("#collapse").html("<i className='bx bxs-chevron-right'></i>");
+		$("#collapse").html("<i class='bx bxs-chevron-right'></i>");
 	}
 
 	setCookie("collapsed", collapsed + "", 30);
@@ -144,16 +146,15 @@ function toTitleCase(str) {
 
 function setPage(page, animations = true) {
 	if (!animations) {removeAnimations()};
-	let pos = (page === "") || (page === undefined) ? $(`#index`).offset() : $("#" + page).offset();
-
-	console.log(pos, page, window.location.origin)
+	page = page === "" ? "#home" : "#" + page;
+	let pos = $(page).offset();
 
 	if (pos !== undefined) {
 		if (prevID !== "") {
-			$("#" + prevID).removeClass("active");
+			$(prevID).removeClass("active");
 		}
 
-		$("#" + page).addClass("active");
+		$(page).addClass("active");
 
 		let my_pos = $("#active_cover");
 
@@ -162,10 +163,9 @@ function setPage(page, animations = true) {
 		$("#top_fill").css("bottom", window.innerHeight - (pos.top - my_pos.height() + 24) - 14 + window.pageYOffset);
 		$("#bottom_fill").css("top", my_pos_height + (pos.top - my_pos.height() + 24) + 14 - window.pageYOffset);
 		$("#active_cover").css("top", pos.top - my_pos.height() + 24 + 14 - window.pageYOffset);
-		prevID = page;
+		prevID = page.slice(1);
 	} 
 	if (!animations) {addAnimations()};
-
 }
 
 function Home() {
@@ -181,7 +181,13 @@ function Home() {
 }
 
 window.addEventListener("resize", () => {
-	setPage(prevID);
+	setPage(prevID, false);
+});
+
+window.addEventListener("load", () => {
+	let path = window.location.pathname;
+	let page = path.split("/").join("");
+	setPage(page, false);
 });
 
 function Socials() {
