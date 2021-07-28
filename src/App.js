@@ -3,6 +3,9 @@ import React from "react";
 import "./styles/boxicons-2.0.9/css/boxicons.min.css";
 import $ from "jquery";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import ReactGA from 'react-ga';
+ReactGA.initialize('G-E5FTE66HSQ');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 setCollapsed(null, true);
 setDark(null, true);
