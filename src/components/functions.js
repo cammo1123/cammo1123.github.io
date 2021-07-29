@@ -1,5 +1,4 @@
 import $ from "jquery";
-import ReactGA from "react-ga";
 
 function addAnimations() {
 	document.documentElement.style.setProperty("--nav-time", "0.1s");
@@ -38,19 +37,15 @@ export function setCookie(name, value, days) {
 }
 
 let prevPage = "";
-ReactGA.initialize("G-E5FTE66HSQ");
 
 export function setPage(page, animations = true) {
-	if (!animations) {
-		removeAnimations();
-	}
+	page = page === "" ? "home" : page;
+	if (!animations) removeAnimations();
 
-	document.title = toTitleCase(page);
+	document.title = "Cameron | " + toTitleCase(page);
 
-	ReactGA.pageview(window.location.pathname + window.location.search, [], document.title);
-	console.log("Sent", window.location.pathname + window.location.search, [], document.title)
+	page = "#" + page;
 
-	page = page === "" ? "#home" : "#" + page;
 	let pos = $(page).offset();
 
 	if (pos !== undefined) {
@@ -69,9 +64,8 @@ export function setPage(page, animations = true) {
 		$("#active_cover").css("top", pos.top - my_pos.height() + 24 + 14 - window.pageYOffset);
 		prevPage = page.slice(1);
 	}
-	if (!animations) {
-		addAnimations();
-	}
+
+	if (!animations) addAnimations();
 }
 
 export function setDark(NULL, dontInvert = false) {
@@ -92,6 +86,7 @@ export function setDark(NULL, dontInvert = false) {
 
 export function setCollapsed(NULL, dontInvert = false) {
 	let collapsed = getCookie("collapsed") === dontInvert + "";
+	setCookie("collapsed", collapsed + "", 30);
 
 	if (!collapsed) {
 		document.documentElement.style.setProperty("--toolbar-width", "300px");
@@ -99,13 +94,16 @@ export function setCollapsed(NULL, dontInvert = false) {
 		document.documentElement.style.setProperty("--nav-color", "#23a6d5");
 
 		$("#collapse").html("<i class='bx bxs-chevron-left'></i>");
+
+		return "bx bxs-chevron-left";
+
 	} else {
 		document.documentElement.style.setProperty("--toolbar-width", "50px");
 		document.documentElement.style.setProperty("--toolbar-text", "none");
 		document.documentElement.style.setProperty("--nav-color", "transparent");
 
 		$("#collapse").html("<i class='bx bxs-chevron-right'></i>");
-	}
 
-	setCookie("collapsed", collapsed + "", 30);
+		return "bx bxs-chevron-right";
+	}
 }
