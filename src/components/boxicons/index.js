@@ -1,1 +1,0 @@
-import "./boxicons.min.css"
