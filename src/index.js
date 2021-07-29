@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactGA from "react-ga";
+
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import './index.css';
@@ -13,7 +13,6 @@ import { Home } from "./pages/home";
 import { Socials } from "./pages/socials";
 import { Projects } from "./pages/projects";
 
-ReactGA.initialize("G-E5FTE66HSQ");
 setCollapsed(null, true);
 setDark(null, true);
 

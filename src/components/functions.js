@@ -1,4 +1,5 @@
 import $ from "jquery";
+import ReactGA from "react-ga";
 
 function addAnimations() {
 	document.documentElement.style.setProperty("--nav-time", "0.1s");
@@ -37,6 +38,7 @@ export function setCookie(name, value, days) {
 }
 
 let prevPage = "";
+ReactGA.initialize("G-E5FTE66HSQ");
 
 export function setPage(page, animations = true) {
 	if (!animations) {
@@ -45,8 +47,8 @@ export function setPage(page, animations = true) {
 
 	document.title = toTitleCase(page);
 
-	window.ga("set", "page", page);
-	window.ga("send", "pageview");
+	ReactGA.pageview(window.location.pathname + window.location.search, [], document.title);
+	console.log("Sent", window.location.pathname + window.location.search, [], document.title)
 
 	page = page === "" ? "#home" : "#" + page;
 	let pos = $(page).offset();
