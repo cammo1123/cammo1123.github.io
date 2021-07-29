@@ -1,4 +1,6 @@
 import { setPage } from "../../components/functions"
+import "./style.css"
+
 
 export function Home() {
 	setPage("home");

@@ -1,10 +1,8 @@
-.message {
-	text-align: center;
-	padding: 1em;
+.message > h1 {
+	margin: 0.5rem;
+	font-size: 4rem;
 }
 
-.message > h1 {
-	margin: 0;
-	font-size: 3em;
-	font-weight: 200;
+.message > sub {
+	font-size: 1rem;
 }
