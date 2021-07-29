@@ -1,0 +1,1 @@
+import "./css/boxicons.min.css"
