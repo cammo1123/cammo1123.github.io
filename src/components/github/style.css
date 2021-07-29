@@ -1,0 +1,61 @@
+.githubGrid {
+	display: grid;
+	grid-template-columns: calc(100%/4) calc(100%/4) calc(100%/4);
+
+}
+
+@media screen and (max-width: 1000px) {
+	.githubGrid {
+		grid-template-columns: calc(100%/3) calc(100%/3) calc(100%/3);
+	}
+}
+@media screen and (max-width: 800px) {
+	.githubGrid {
+		grid-template-columns: calc(100%/2) calc(100%/2);
+	}
+}
+@media screen and (max-width: 600px) {
+	.githubGrid {
+		grid-template-columns: calc(100%/1);
+	}
+}
+
+.githubCard{
+	display: flex-grid;
+	border-radius: 2px;
+	width: 95%;
+	margin: 2.5%;
+	padding: 2.5%;
+	box-shadow: 0px 0px 2px 1px var(--shadow-color);
+	text-decoration: none;
+	color: var(--text-color);
+}
+
+.githubCard > div:first-child{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.githubCard img {
+	width: 50%;
+	border-radius: 50%;
+	object-fit:cover;
+}
+
+.githubCard > div {
+	width: 100%;
+	overflow: hidden;
+}
+
+.githubCard > div > * {
+	max-width: 100%;
+	word-wrap:break-word;
+}
+
+.githubCard > div > h1 {
+	word-wrap:normal;
+	font-size: 1.25rem;
+	color: #2178db;
+}
