@@ -95,7 +95,7 @@ export function setCollapsed(NULL, dontInvert = false) {
 
 		$("#collapse").html("<i class='bx bxs-chevron-left'></i>");
 
-		return "bx bxs-chevron-left";
+		return "left";
 
 	} else {
 		document.documentElement.style.setProperty("--toolbar-width", "50px");
@@ -104,6 +104,6 @@ export function setCollapsed(NULL, dontInvert = false) {
 
 		$("#collapse").html("<i class='bx bxs-chevron-right'></i>");
 
-		return "bx bxs-chevron-right";
+		return "right";
 	}
 }
