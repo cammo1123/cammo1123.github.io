@@ -10,33 +10,21 @@ export function Socials() {
 			<div className="content">
 				<h1 className="tx-center">Add my Socials</h1>
 				<ul className="socials">
-					<li>
-						<a alt="instagram" target="_blank" rel="noreferrer" href="https://instagram.com/cammo1123">
-							<i className="bx bxl-instagram"></i>
-						</a>
-					</li>
-					<li>
-						<a alt="instagram" target="_blank" rel="noreferrer" href="https://snapchat.com/add/cammo11233">
-							<i className="bx bxl-snapchat"></i>
-						</a>
-					</li>
-					<li>
-						<a alt="instagram" target="_blank" rel="noreferrer" href="https://twitter.com/cammo1123">
-							<i className="bx bxl-twitter"></i>
-						</a>
-					</li>
-					<li>
-						<a alt="instagram" target="_blank" rel="noreferrer" href="https://twitch.tv/cammo1123">
-							<i className="bx bxl-twitch"></i>
-						</a>
-					</li>
-					<li>
-						<a alt="instagram" target="_blank" rel="noreferrer" href="https://discord.com/users/341833124361011200">
-							<i className="bx bxl-discord"></i>
-						</a>
-					</li>
+					{linkToNewSite("instagram", "https://instagram.com/cammo1123")}
+					{linkToNewSite("snapchat", "https://snapchat.com/add/cammo11233")}
+					{linkToNewSite("twitter", "https://twitter.com/cammo1123")}
+					{linkToNewSite("twitch", "https://twitch.tv/cammo1123")}
+					{linkToNewSite("discord", "https://discord.com/users/341833124361011200")}
 				</ul>
 			</div>
 		</div>
 	);
+
+	function linkToNewSite(icon, url) {
+		return <li>
+			<a alt={icon} target="_blank" rel="noreferrer" href={url}>
+				<i className={"bx bxl-" + icon}></i>
+			</a>
+		</li>;
+	}
 }
