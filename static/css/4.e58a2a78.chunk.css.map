@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/pages/home/style.css"],"names":[],"mappings":"AAAA,YACC,YAAc,CACd,cACD,CAEA,aACC,cACD","file":"4.e58a2a78.chunk.css","sourcesContent":[".message > h1 {\n\tmargin: 0.5rem;\n\tfont-size: 32pt;\n}\n\n.message > sub {\n\tfont-size: 1rem;\n}"]}
