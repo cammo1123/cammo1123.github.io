@@ -20,27 +20,27 @@ export class NavCover extends Component {
 }
 
 export function NavBar(props) {
-	return (<nav>
-		<NavCover />
-		<ul>
-			{props.children}
-		</ul>
-		<button id="collapse" onClick={setCollapsed}>
-			<i className={"bx bx-chevron-" + props.arrowDir}></i>
-		</button>
-		<span id="copyright">
-			Copyright (c) Cameron Youell
-			<br />
-			2021, All Rights Reserved
-		</span>
-		<button id="adjust" onClick={setDark}>
-			<i className="bx bx-adjust"></i>
-		</button>
-	</nav>);
+	return (
+		<nav>
+			<NavCover />
+			<ul>{props.children}</ul>
+			<button id="collapse" onClick={setCollapsed}>
+				<i className={"bx bx-chevron-" + props.arrowDir}></i>
+			</button>
+			<span id="copyright">
+				Copyright (c) Cameron Youell
+				<br />
+				2021, All Rights Reserved
+			</span>
+			<button id="adjust" onClick={setDark}>
+				<i className="bx bx-adjust"></i>
+			</button>
+		</nav>
+	);
 }
 
 export function NavItem(props) {
-	let name, path
+	let name, path;
 
 	path = props.path === undefined ? "/" + props.id : props.path;
 	name = props.name === undefined ? toTitleCase(props.id) : props.name;
