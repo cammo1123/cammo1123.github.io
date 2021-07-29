@@ -1,7 +1,6 @@
 import { setPage } from "../../components/functions"
 import "./style.css";
 
-
 export default function Socials() {
 	setPage("socials");
 
@@ -10,20 +9,20 @@ export default function Socials() {
 			<div className="content">
 				<h1 className="tx-center">Add my Socials</h1>
 				<ul className="socials">
-					{linkToNewSite("instagram", "https://instagram.com/cammo1123")}
-					{linkToNewSite("snapchat", "https://snapchat.com/add/cammo11233")}
-					{linkToNewSite("twitter", "https://twitter.com/cammo1123")}
-					{linkToNewSite("twitch", "https://twitch.tv/cammo1123")}
-					{linkToNewSite("discord", "https://discord.com/users/341833124361011200")}
+					<LinkToNewSite icon="instagram" url="https://instagram.com/cammo1123"/>
+					<LinkToNewSite icon="snapchat" url="https://snapchat.com/add/cammo11233"/>
+					<LinkToNewSite icon="twitter" url="https://twitter.com/cammo1123"/>
+					<LinkToNewSite icon="twitch" url="https://twitch.tv/cammo1123"/>
+					<LinkToNewSite icon="discord" url="https://discord.com/users/341833124361011200"/>
 				</ul>
 			</div>
 		</div>
 	);
 
-	function linkToNewSite(icon, url) {
+	function LinkToNewSite(props) {
 		return <li>
-			<a alt={icon} target="_blank" rel="noreferrer" href={url}>
-				<i className={"bx bxl-" + icon}></i>
+			<a alt={props.icon} target="_blank" rel="noreferrer" href={props.url}>
+				<i className={"bx bxl-" + props.icon}></i>
 			</a>
 		</li>;
 	}
