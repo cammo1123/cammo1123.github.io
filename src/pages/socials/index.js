@@ -2,7 +2,7 @@ import { setPage } from "../../components/functions"
 import "./style.css";
 
 
-export function Socials() {
+export default function Socials() {
 	setPage("socials");
 
 	return (

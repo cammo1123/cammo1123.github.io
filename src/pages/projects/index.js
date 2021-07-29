@@ -1,7 +1,7 @@
 import { setPage } from "../../components/functions";
 import { GitHubSearch } from "../../components/github";
 
-export function Projects() {
+export default function Projects() {
 	setPage("projects");
 	return (
 		<div className="content">

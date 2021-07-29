@@ -1,23 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Suspense, lazy } from "react";
+import ReactDOM from "react-dom";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import './index.css';
+import "./index.css";
 
 import { setCollapsed, setDark, setPage } from "./components/functions";
 import { NavCover, navItem } from "./components/navbar";
 
-import { Home } from "./pages/home";
-import { Socials } from "./pages/socials";
-import { Projects } from "./pages/projects";
-
 let chevron = setCollapsed(null, true);
 setDark(null, true);
 
+const Socials = lazy(() => import("./pages/socials"));
+const Home = lazy(() => import("./pages/home"));
+const Projects = lazy(() => import("./pages/projects"));
+
 ReactDOM.render(
-  <React.StrictMode>
-   <Router>
+	<React.StrictMode>
+		<Router>
 			<div>
 				<nav>
 					<NavCover />
@@ -38,21 +38,17 @@ ReactDOM.render(
 						<i className="bx bx-adjust"></i>
 					</button>
 				</nav>
-				<Switch>
-					<Route path="/socials">
-						<Socials />
-					</Route>
-					<Route path="/projects">
-						<Projects />
-					</Route>
-					<Route path="/">
-						<Home />
-					</Route>
-				</Switch>
+				<Suspense fallback={<div>Loading...</div>}>
+					<Switch>
+						<Route exact path="/" component={Home} />
+						<Route path="/socials" component={Socials} />
+						<Route path="/projects" component={Projects} />
+					</Switch>
+				</Suspense>
 			</div>
 		</Router>
-  </React.StrictMode>,
-  document.getElementById('root')
+	</React.StrictMode>,
+	document.getElementById("root")
 );
 
 window.addEventListener("resize", () => {

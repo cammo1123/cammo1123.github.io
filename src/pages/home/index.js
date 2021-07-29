@@ -2,7 +2,7 @@ import { setPage } from "../../components/functions"
 import "./style.css"
 
 
-export function Home() {
+export default function Home() {
 	setPage("home");
 	return (
 		<div className="center fullpage gradient">
