@@ -189,6 +189,6 @@ nav > ul {
 	color: var(--text-color) !important;
 }
 
-.cover * {
+nav, .cover * {
 	transition: all var(--nav-time) linear;
 }
