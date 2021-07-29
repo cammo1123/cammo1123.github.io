@@ -13,7 +13,7 @@ import { Home } from "./pages/home";
 import { Socials } from "./pages/socials";
 import { Projects } from "./pages/projects";
 
-setCollapsed(null, true);
+let chevron = setCollapsed(null, true);
 setDark(null, true);
 
 ReactDOM.render(
@@ -28,7 +28,7 @@ ReactDOM.render(
 						{navItem("projects", "grid", Link)}
 					</ul>
 					<button id="collapse" onClick={setCollapsed}>
-						<i className="bx bxs-chevron-right"></i>
+						<i className={chevron}></i>
 					</button>
 					<span id="copyright">
 						Copyright (c) Cameron Youell
