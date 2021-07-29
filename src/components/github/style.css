@@ -1,6 +1,9 @@
+/* Grid Styling */
+
 .githubGrid {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
+	gap: 1rem;
 }
 
 @media screen and (max-width: 1400px) {
@@ -20,50 +23,7 @@
 	}
 }
 
-.githubCard {
-	display: flex-grid;
-	border-radius: 2px;
-	margin: 2.5%;
-	padding: 2.5%;
-	box-shadow: 0px 0px 2px 1px var(--shadow-color);
-	text-decoration: none;
-	color: var(--text-color);
-}
-
-.githubCard img {
-	width: 50%;
-	border-radius: 50%;
-	object-fit: cover;
-}
-
-.githubCard > div {
-	max-width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-}
-
-.githubCard p {
-	flex-grow: 1;
-	height: 100%;
-}
-
-.githubCard > div > h1 {
-	word-wrap: break-word;
-	font-size: 1.25rem;
-	color: #2178db;
-}
-
-.githubSearch > header > h1 {
-	margin: 0px;
-	margin-right: 0.5ch;
-}
-
-.githubSearch > header > form {
-	width: auto;
-	flex-shrink: 1;
-}
+/* Searchbox Styling */
 
 .githubSearch > header > form > input {
 	font-size: xx-large;
@@ -77,26 +37,52 @@
 	border-bottom: 1px solid var(--text-color);
 }
 
-.githubCard > div > span {
+.githubSearch > header {
+	display: flex;
+}
+
+.githubSearch > header > * {
+	margin: 1rem 0.5ch 1rem 0;
+}
+
+.githubSearch > header > h1 {
+	flex-shrink: 0;
+}
+
+@media screen and (max-width: 800px) {
+	.githubSearch > header {
+		display: block;
+	}
+}
+
+/* Card Styling */
+
+.githubCard {
+	display: flex;
+	border-radius: 0.125rem;
+	padding: 2.5%;
+	box-shadow: 0px 0px 2px 1px var(--shadow-color);
+	text-decoration: none;
+	color: var(--text-color);
+	flex-direction: column;
+}
+
+.githubCard p {
+	flex-grow: 1;
+	height: 100%;
+}
+
+.githubCard h1 {
+	word-wrap: break-word;
+	font-size: 1.25rem;
+	color: #2178db;
+}
+
+.githubCard span {
 	align-self: flex-end;
 }
 
-.githubCard > div > span > i {
+.githubCard span > i {
 	padding-left: 1ch;
 }
 
-header {
-	display: flex;
-	margin-top: 20px;
-	overflow: hidden;
-}
-
-@media screen and (max-width: 900px) {
-	header {
-		display: block;
-		margin-bottom: 10px;
-	}
-	.githubSearch > header > h1 {
-		margin-right: 0;
-	}
-}

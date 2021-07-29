@@ -35,7 +35,6 @@ export class GitHubSearch extends Component {
 				if (repo.private) break;
 				repos.push(
 					<a key={i} alt={repo.full_name} href={repo.html_url} target="_blank" rel="noreferrer" className="githubCard">
-						<div>
 							<h1>{repo.full_name}</h1>
 							<p>{repo.description}</p>
 							<span>
@@ -44,7 +43,6 @@ export class GitHubSearch extends Component {
 								<i className="bx bx-star"></i>
 								{repo.stargazers_count}
 							</span>
-						</div>
 					</a>
 				);
 			}
