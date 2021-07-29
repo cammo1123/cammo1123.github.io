@@ -1,6 +1,5 @@
-import { setPage } from "../../components/functions"
-import "./style.css"
-
+import { setPage } from "../../components/functions";
+import "./style.css";
 
 export default function Home() {
 	setPage("home");

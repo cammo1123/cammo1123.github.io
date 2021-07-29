@@ -16,9 +16,9 @@ export class GitHubSearch extends Component {
 	}
 
 	async componentDidMount() {
-        let repos = await this.getUserRepo("cammo1123");
+		let repos = await this.getUserRepo("cammo1123");
 		this.setState({ repos: repos });
-    }
+	}
 
 	async handleSubmit(e) {
 		e.preventDefault();
@@ -35,14 +35,14 @@ export class GitHubSearch extends Component {
 				if (repo.private) break;
 				repos.push(
 					<a key={i} alt={repo.full_name} href={repo.html_url} target="_blank" rel="noreferrer" className="githubCard">
-							<h1>{repo.full_name}</h1>
-							<p>{repo.description}</p>
-							<span>
-								<i className="bx bx-git-repo-forked"></i>
-								{repo.forks_count}
-								<i className="bx bx-star"></i>
-								{repo.stargazers_count}
-							</span>
+						<h1>{repo.full_name}</h1>
+						<p>{repo.description}</p>
+						<span>
+							<i className="bx bx-git-repo-forked"></i>
+							{repo.forks_count}
+							<i className="bx bx-star"></i>
+							{repo.stargazers_count}
+						</span>
 					</a>
 				);
 			}
@@ -53,7 +53,7 @@ export class GitHubSearch extends Component {
 				<header>
 					<h1>Repositories for</h1>
 					<form onSubmit={(e) => this.handleSubmit(e)}>
-						<input type="text" placeholder="username" defaultValue="cammo1123"/>
+						<input type="text" placeholder="username" defaultValue="cammo1123" />
 					</form>
 				</header>
 				<div className="githubGrid">{repos}</div>

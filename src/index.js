@@ -20,9 +20,9 @@ ReactDOM.render(
 	<React.StrictMode>
 		<Router>
 			<NavBar arrowDir={arrowDir}>
-				<NavItem id="home" iconName="home" path="/"/>
-				<NavItem id="socials" iconName="message"/>
-				<NavItem id="projects" iconName="grid-alt"/>
+				<NavItem id="home" iconName="home" path="/" />
+				<NavItem id="socials" iconName="message" />
+				<NavItem id="projects" iconName="grid-alt" />
 			</NavBar>
 			<Suspense fallback={<div className="center fullscreen content">Loading...</div>}>
 				<Switch>

@@ -173,7 +173,6 @@ nav > ul {
 	text-align: center;
 }
 
-
 .navItem li a span {
 	flex-grow: 1;
 	display: var(--toolbar-text);
@@ -189,6 +188,7 @@ nav > ul {
 	color: var(--text-color) !important;
 }
 
-nav, .cover * {
+nav,
+.cover * {
 	transition: all var(--nav-time) linear;
 }
