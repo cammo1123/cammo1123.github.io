@@ -1,1 +1,1 @@
-import "./css/boxicons.min.css"
+import "./boxicons.min.css"
