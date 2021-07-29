@@ -1,29 +1,28 @@
 .githubGrid {
 	display: grid;
-	grid-template-columns: calc(100%/4) calc(100%/4) calc(100%/4);
-
+	grid-template-columns: repeat(4, 1fr);
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1400px) {
 	.githubGrid {
-		grid-template-columns: calc(100%/3) calc(100%/3) calc(100%/3);
+		grid-template-columns: repeat(3, 1fr);
 	}
 }
+@media screen and (max-width: 1100px) {
+	.githubGrid {
+		grid-template-columns: calc(100% / 2) calc(100% / 2);
+	}
+}
+
 @media screen and (max-width: 800px) {
 	.githubGrid {
-		grid-template-columns: calc(100%/2) calc(100%/2);
-	}
-}
-@media screen and (max-width: 600px) {
-	.githubGrid {
-		grid-template-columns: calc(100%/1);
+		grid-template-columns: calc(100% / 1);
 	}
 }
 
-.githubCard{
+.githubCard {
 	display: flex-grid;
 	border-radius: 2px;
-	width: 95%;
 	margin: 2.5%;
 	padding: 2.5%;
 	box-shadow: 0px 0px 2px 1px var(--shadow-color);
@@ -31,31 +30,73 @@
 	color: var(--text-color);
 }
 
-.githubCard > div:first-child{
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
 .githubCard img {
 	width: 50%;
 	border-radius: 50%;
-	object-fit:cover;
+	object-fit: cover;
 }
 
 .githubCard > div {
-	width: 100%;
-	overflow: hidden;
+	max-width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
 }
 
-.githubCard > div > * {
-	max-width: 100%;
-	word-wrap:break-word;
+.githubCard p {
+	flex-grow: 1;
+	height: 100%;
 }
 
 .githubCard > div > h1 {
-	word-wrap:normal;
+	word-wrap: break-word;
 	font-size: 1.25rem;
 	color: #2178db;
+}
+
+.githubSearch > header > h1 {
+	margin: 0px;
+	margin-right: 0.5ch;
+}
+
+.githubSearch > header > form {
+	width: auto;
+	flex-shrink: 1;
+}
+
+.githubSearch > header > form > input {
+	font-size: xx-large;
+	outline: none;
+	border: none;
+	padding: 0;
+	width: 100%;
+	background: none;
+	color: var(--text-color);
+	font-family: "Montserrat", sans-serif;
+	border-bottom: 1px solid var(--text-color);
+}
+
+.githubCard > div > span {
+	align-self: flex-end;
+}
+
+.githubCard > div > span > i {
+	padding-left: 1ch;
+}
+
+header {
+	display: flex;
+	margin-top: 20px;
+	overflow: hidden;
+}
+
+@media screen and (max-width: 900px) {
+	header {
+		display: block;
+		margin-bottom: 10px;
+	}
+	.githubSearch > header > h1 {
+		margin-right: 0;
+	}
 }
