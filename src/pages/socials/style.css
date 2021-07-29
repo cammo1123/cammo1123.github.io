@@ -8,10 +8,17 @@
 
 .socials > li {
 	padding: 5px;
-	font-size: 4rem;
+	font-size: 60pt;
 }
 
 .socials > li > a {
 	text-decoration: none;
 	color: var(--text-color-light);
+}
+
+@media screen and (max-width: 800px) {
+	.socials {
+		flex-direction: row;
+		display: inline;
+	}
 }
