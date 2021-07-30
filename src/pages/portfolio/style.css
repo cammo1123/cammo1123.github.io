@@ -1,0 +1,22 @@
+.top-section {
+	overflow: hidden;
+	min-height: 40vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.top-section > div > h1 {
+	display: block;
+	width: min(100%, 600px);
+	font-size: 2em;
+}
+
+.top-section > div > sub {
+	display: block;
+	width: min(100%, 300px);
+}
+
+.portfolio > * {
+	padding: 1rem;
+}

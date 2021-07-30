@@ -1,4 +1,4 @@
-.socials {
+.socialLinks {
 	display: inline-flex;
 	list-style: none;
 	width: 100%;
@@ -6,18 +6,18 @@
 	justify-content: center;
 }
 
-.socials > li {
+.socialLinks > li {
 	padding: 5px;
 	font-size: 60pt;
 }
 
-.socials > li > a {
+.socialLinks > li > a {
 	text-decoration: none;
 	color: var(--text-color-light);
 }
 
 @media screen and (max-width: 800px) {
-	.socials {
+	.socialLinks {
 		flex-direction: row;
 		display: inline;
 	}

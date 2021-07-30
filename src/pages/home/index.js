@@ -1,14 +1,15 @@
 import { setPage } from "../../components/functions";
+import { PageContent, PageSection } from "../../components/page";
 import "./style.css";
 
 export default function Home() {
 	setPage("home");
 	return (
-		<div className="center fullpage gradient">
-			<div className="content message">
+		<PageContent name="home">
+			<PageSection name="message" className="gradient fullpage center">
 				<h1>Cameron</h1>
 				<sub>I'm Pretty Cool (I Think)</sub>
-			</div>
-		</div>
+			</PageSection>
+		</PageContent>
 	);
 }
