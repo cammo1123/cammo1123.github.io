@@ -1,0 +1,2 @@
+.socialLinks{display:inline-flex;list-style:none;width:100%;padding:0;justify-content:center}.socials .message{color:var(--text-color-light)}.socials .message h1{font-size:32pt;margin:.5rem}.socialLinks>li{padding:5px;font-size:60pt}.socialLinks>li>a{text-decoration:none;color:var(--text-color-light)}@media screen and (max-width:800px){.socialLinks{flex-direction:row;display:inline}}
+/*# sourceMappingURL=5.060b6573.chunk.css.map */

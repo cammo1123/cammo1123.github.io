@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/pages/home/style.css"],"names":[],"mappings":"AAAA,kBACC,YAAc,CACd,cACD,CAEA,mBACC,cACD,CAEA,eACC,6BACD","file":"4.268a6391.chunk.css","sourcesContent":[".home .message h1 {\n\tmargin: 0.5rem;\n\tfont-size: 32pt;\n}\n\n.home .message sub {\n\tfont-size: 1rem;\n}\n\n.home .message {\n\tcolor: var(--text-color-light);\n}\n"]}
