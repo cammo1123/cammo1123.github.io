@@ -28,8 +28,7 @@ body {
 }
 
 .content {
-	margin-left: calc(var(--toolbar-padding) + var(--toolbar-width) + 20px);
-	margin-right: 20px;
+	padding-left: calc(var(--toolbar-padding) + var(--toolbar-width));
 }
 
 .fullpage {
@@ -56,8 +55,7 @@ body {
 
 @media screen and (max-width: 600px) {
 	.content {
-		margin-left: calc(var(--toolbar-padding) + 70px);
-		margin-right: 20px;
+		padding-left: calc(var(--toolbar-padding) + 50px);
 	}
 	nav {
 		background: var(--nav-color);
