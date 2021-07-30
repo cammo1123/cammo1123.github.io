@@ -34,16 +34,9 @@ export class GitHubSearch extends Component {
 				let repo = this.state.repos[i];
 				if (repo.private) break;
 				repos.push(
-					<a key={i} alt={repo.full_name} href={repo.html_url} target="_blank" rel="noreferrer" className="githubCard">
-						<h1>{repo.full_name}</h1>
-						<p>{repo.description}</p>
-						<span>
-							<i className="bx bx-git-repo-forked"></i>
-							{repo.forks_count}
-							<i className="bx bx-star"></i>
-							{repo.stargazers_count}
-						</span>
-					</a>
+					<GithubCard name={repo.full_name} url={repo.html_url} forks={repo.forks_count} stars={repo.stargazers_count}>
+						{repo.description}
+					</GithubCard>
 				);
 			}
 		}
@@ -60,4 +53,19 @@ export class GitHubSearch extends Component {
 			</div>
 		);
 	}
+}
+
+export function GithubCard(props) {
+	return (
+		<a key={props.name} alt={props.name} href={props.url} target="_blank" rel="noreferrer" className="githubCard">
+			<h1>{props.name}</h1>
+			<p>{props.children}</p>
+			<span>
+				<i className="bx bx-git-repo-forked"></i>
+				{props.forks}
+				<i className="bx bx-star"></i>
+				{props.stars}
+			</span>
+		</a>
+	);
 }
