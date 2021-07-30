@@ -1,8 +1,12 @@
-.message h1 {
+.home .message h1 {
 	margin: 0.5rem;
 	font-size: 32pt;
 }
 
-.message sub {
+.home .message sub {
 	font-size: 1rem;
+}
+
+.home .message {
+	color: var(--text-color-light);
 }

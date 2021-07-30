@@ -6,6 +6,15 @@
 	justify-content: center;
 }
 
+.socials .message {
+	color: var(--text-color-light);
+}
+
+.socials .message h1 {
+	font-size: 32pt;
+	margin: 0.5rem;
+}
+
 .socialLinks > li {
 	padding: 5px;
 	font-size: 60pt;

@@ -3,6 +3,7 @@
 	min-height: 40vh;
 	display: flex;
 	flex-direction: column;
+	color: var(--text-color-light);
 	justify-content: center;
 }
 
