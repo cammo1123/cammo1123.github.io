@@ -2,29 +2,33 @@
 
 .githubGrid {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(4, minmax(0, 1fr));
 	gap: 1rem;
 	padding-bottom: 1rem;
 }
 
 @media screen and (max-width: 1400px) {
 	.githubGrid {
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(3, minmax(0, 1fr));
 	}
 }
 @media screen and (max-width: 1100px) {
 	.githubGrid {
-		grid-template-columns: calc(100% / 2) calc(100% / 2);
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 }
 
 @media screen and (max-width: 800px) {
 	.githubGrid {
-		grid-template-columns: calc(100% / 1);
+		grid-template-columns: repeat(1, minmax(0, 1fr));
 	}
 }
 
 /* Searchbox Styling */
+
+.githubSearch > header > * {
+	font-size: xx-large;
+}
 
 .githubSearch > header > form > input {
 	font-size: xx-large;
@@ -61,7 +65,7 @@
 .githubCard {
 	display: flex;
 	border-radius: 0.125rem;
-	padding: 2.5%;
+	padding: 1rem;
 	box-shadow: 0px 0px 2px 1px var(--shadow-color);
 	text-decoration: none;
 	color: var(--text-color);
@@ -86,4 +90,3 @@
 .githubCard span > i {
 	padding-left: 1ch;
 }
-
