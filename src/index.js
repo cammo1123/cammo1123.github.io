@@ -22,9 +22,10 @@ ReactDOM.render(
 	<React.StrictMode>
 		<Router>
 			<NavBar arrowDir={arrowDir}>
-				<NavItem id="home" iconName="home" path="/" />
-				<NavItem id="socials" iconName="message" />
-				<NavItem id="projects" iconName="grid-alt" />
+				<NavItem id="home" iconName="bx-home" path="/" />
+				<NavItem id="socials" iconName="bx-message" />
+				<NavItem id="portfolio" iconName="bxs-report" />
+				<NavItem id="projects" iconName="bx-git-repo-forked" />
 			</NavBar>
 			<Suspense
 				fallback={
@@ -36,9 +37,9 @@ ReactDOM.render(
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route path="/socials" component={Socials} />
+					<Route path="/portfolio" component={Portfolio} />
 					<Route path="/projects" component={Projects} />
 					<Route path="/blog" component={Blog} />
-					<Route path="/portfolio" component={Portfolio} />
 				</Switch>
 			</Suspense>
 		</Router>

@@ -49,7 +49,7 @@ export function NavItem(props) {
 		<div className="navItem" id={props.id}>
 			<li>
 				<LINK to={path}>
-					<i className={"bx bx-" + props.iconName}></i>
+					<i className={"bx " + props.iconName}></i>
 					<span>{name}</span>
 				</LINK>
 			</li>
