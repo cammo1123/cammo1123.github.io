@@ -1,4 +1,4 @@
-import "./style.css";
+import "./style.scss";
 import React, { Component } from "react";
 
 export class GitHubSearch extends Component {

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { LINK } from "../..";
 import { setCollapsed, setDark, toTitleCase } from "../functions";
 
-import "./style.css";
+import "./style.scss";
 
 export class NavCover extends Component {
 	render() {
