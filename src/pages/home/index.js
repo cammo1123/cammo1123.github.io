@@ -1,6 +1,6 @@
 import { setPage } from "../../components/functions";
 import { PageContent, PageSection } from "../../components/page";
-import "./style.css";
+import "./style.scss";
 
 export default function Home() {
 	setPage("home");

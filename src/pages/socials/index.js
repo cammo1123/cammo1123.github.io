@@ -1,7 +1,7 @@
 import { setPage } from "../../components/functions";
 import { PageContent, PageSection, LinkToNewSite } from "../../components/page";
 
-import "./style.css";
+import "./style.scss";
 
 export default function Socials() {
 	setPage("socials");

@@ -2,7 +2,7 @@ import { setPage } from "../../components/functions";
 import { PageContent, PageSection } from "../../components/page";
 import { GithubCard } from "../../components/github";
 
-import "./style.css";
+import "./style.scss";
 
 export default function Portfolio() {
 	setPage("portfolio");
