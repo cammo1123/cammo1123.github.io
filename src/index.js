@@ -1,16 +1,15 @@
 import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom";
-
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import "./index.css";
+import "./index.scss";
 
 import { setCollapsed, setDark, setPage } from "./components/functions";
+import { PageContent, PageSection } from "./components/page";
 import { NavBar, NavItem } from "./components/navbar";
 
 let arrowDir = setCollapsed(null, true);
 export let LINK = Link;
-setDark(null, true);
 
 const Socials = lazy(() => import("./pages/socials"));
 const Home = lazy(() => import("./pages/home"));
@@ -29,9 +28,11 @@ ReactDOM.render(
 			</NavBar>
 			<Suspense
 				fallback={
-					<div className="center fullscreen">
-						<div className="content">Loading...</div>
-					</div>
+					<PageContent name="portfolio">
+						<PageSection className="fullpage center">
+							<div className="content">Loading...</div>
+						</PageSection>
+					</PageContent>
 				}
 			>
 				<Switch>
@@ -57,4 +58,5 @@ window.addEventListener("load", () => {
 	let path = window.location.pathname;
 	let page = path.split("/").join("");
 	setPage(page, false);
+	setDark(null, true);
 });
