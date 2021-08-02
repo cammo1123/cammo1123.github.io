@@ -25,38 +25,39 @@
 }
 
 /* Searchbox Styling */
+.githubSearch {
+	header > * {
+		font-size: xx-large;
+	}
 
-.githubSearch > header > * {
-	font-size: xx-large;
-}
+	header > form > input {
+		font-size: xx-large;
+		outline: none;
+		border: none;
+		padding: 0;
+		width: 100%;
+		background: none;
+		color: var(--text-color);
+		font-family: "Montserrat", sans-serif;
+		border-bottom: 1px solid var(--text-color);
+	}
 
-.githubSearch > header > form > input {
-	font-size: xx-large;
-	outline: none;
-	border: none;
-	padding: 0;
-	width: 100%;
-	background: none;
-	color: var(--text-color);
-	font-family: "Montserrat", sans-serif;
-	border-bottom: 1px solid var(--text-color);
-}
+	header {
+		display: flex;
+	}
 
-.githubSearch > header {
-	display: flex;
-}
+	header > * {
+		margin: 1rem 0.5ch 1rem 0;
+	}
 
-.githubSearch > header > * {
-	margin: 1rem 0.5ch 1rem 0;
-}
+	header > h1 {
+		flex-shrink: 0;
+	}
 
-.githubSearch > header > h1 {
-	flex-shrink: 0;
-}
-
-@media screen and (max-width: 800px) {
-	.githubSearch > header {
-		display: block;
+	@media screen and (max-width: 800px) {
+		header {
+			display: block;
+		}
 	}
 }
 
@@ -70,23 +71,22 @@
 	text-decoration: none;
 	color: var(--text-color);
 	flex-direction: column;
-}
 
-.githubCard p {
-	flex-grow: 1;
-	height: 100%;
-}
+	p {
+		flex-grow: 1;
+		height: 100%;
+	}
 
-.githubCard h1 {
-	word-wrap: break-word;
-	font-size: 1.25rem;
-	color: #2178db;
-}
+	h1 {
+		word-wrap: break-word;
+		font-size: 1.25rem;
+		color: #2178db;
+	}
 
-.githubCard span {
-	align-self: flex-end;
-}
-
-.githubCard span > i {
-	padding-left: 1ch;
+	span {
+		align-self: flex-end;
+	}
+	span > i {
+		padding-left: 1ch;
+	}
 }
