@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/pages/projects/style.scss"],"names":[],"mappings":"AAAA,wBAEE,YAAa","file":"7.4ad9a1d9.chunk.css","sourcesContent":[".projects {\r\n\t.githubSearch {\r\n\t\tpadding: 1rem;\r\n\t}\r\n}\r\n"]}

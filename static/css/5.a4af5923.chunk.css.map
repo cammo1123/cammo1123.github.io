@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/pages/home/style.scss"],"names":[],"mappings":"AAAA,kBAEE,YAAc,CACd,cAAe,CAHjB,mBAOE,cAAe,CAPjB,eAWE,6BAA8B","file":"5.a4af5923.chunk.css","sourcesContent":[".home {\n\t.message h1 {\n\t\tmargin: 0.5rem;\n\t\tfont-size: 32pt;\n\t}\n\n\t.message sub {\n\t\tfont-size: 1rem;\n\t}\n\n\t.message {\n\t\tcolor: var(--text-color-light);\n\t}\n}\n"]}

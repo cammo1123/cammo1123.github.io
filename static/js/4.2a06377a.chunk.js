@@ -1,0 +1,2 @@
+(this["webpackJsonpreact-site"]=this["webpackJsonpreact-site"]||[]).push([[4],{41:function(e,t,c){},48:function(e,t,c){"use strict";c.r(t),c.d(t,"default",(function(){return i}));var n=c(8),s=c(11),r=(c(41),c(1));function i(){return Object(n.c)("home"),Object(r.jsx)(s.b,{name:"home",children:Object(r.jsxs)(s.c,{name:"message",className:"gradient fullpage center",children:[Object(r.jsx)("h1",{children:"Cameron"}),Object(r.jsx)("sub",{children:"I'm Pretty Cool (I Think)"})]})})}}}]);
+//# sourceMappingURL=4.2a06377a.chunk.js.map
