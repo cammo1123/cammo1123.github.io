@@ -14,7 +14,6 @@ export let LINK = Link;
 const Socials = lazy(() => import("./pages/socials"));
 const Home = lazy(() => import("./pages/home"));
 const Projects = lazy(() => import("./pages/projects"));
-const Blog = lazy(() => import("./pages/blog"));
 const Portfolio = lazy(() => import("./pages/portfolio"));
 
 ReactDOM.render(
@@ -40,7 +39,6 @@ ReactDOM.render(
 					<Route path="/socials" component={Socials} />
 					<Route path="/portfolio" component={Portfolio} />
 					<Route path="/projects" component={Projects} />
-					<Route path="/blog" component={Blog} />
 				</Switch>
 			</Suspense>
 		</Router>
