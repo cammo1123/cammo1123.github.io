@@ -1,2 +1,0 @@
-(this["webpackJsonpreact-site"]=this["webpackJsonpreact-site"]||[]).push([[6],{45:function(t,c,e){},49:function(t,c,e){"use strict";e.r(c),e.d(c,"default",(function(){return j}));var n=e(8),s=e(39),r=e(11),i=(e(45),e(1));function j(){return Object(n.c)("projects"),Object(i.jsx)(r.b,{name:"projects",children:Object(i.jsx)(r.c,{children:Object(i.jsx)(s.a,{})})})}}}]);
-//# sourceMappingURL=6.ec0d275c.chunk.js.map
