@@ -10,13 +10,13 @@
 
 	.top-section > div > h1 {
 		display: block;
-		width: clamp(100%, 600px);
+		width: clamp(100%, 600px, 100%);
 		font-size: 2em;
 	}
 
 	.top-section > div > sub {
 		display: block;
-		width: clamp(100%, 300px);
+		width: clamp(100%, 300px, 100%);
 	}
 }
 
