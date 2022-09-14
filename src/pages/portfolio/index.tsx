@@ -4,21 +4,27 @@ import { GithubCard } from "../../components/github";
 
 import "./style.scss";
 
-export default function Portfolio() {
+const Portfolio = () => {
 	setPage("portfolio");
+
 	return (
 		<PageContent name="portfolio">
 			<PageSection name="top-section" className="gradient">
 				<h1>Welcome to my Personal Portfolio</h1>
-				<sub>The purpose of React is to help aspiring and established developers to realise the true pain of web development</sub>
+				<sub>
+					The purpose of React is to help aspiring and established developers to realize the true pain of web
+					development
+				</sub>
 			</PageSection>
 			<PageSection name="mid-section">
 				<h1>Some of my Best Projects</h1>
-				<div className="githubGrid">
-					<GithubCard name="cammo1123/Plex-Player" forks={0} stars={0} url="https://github.com/cammo1123/Plex-Player"> </GithubCard>
-					<GithubCard name="cammo1123/cammo1123.github.io" forks={0} stars={0} url="https://github.com/cammo1123/cammo1123/github.io"> </GithubCard>
+				<div class="githubGrid">
+					<GithubCard name="cammo1123/Plex-Player" url="https://github.com/cammo1123/Plex-Player" />
+					<GithubCard name="cammo1123/QuickKeys-CPP" url="https://github.com/cammo1123/QuickKeys-CPP" />
 				</div>
 			</PageSection>
 		</PageContent>
 	);
-}
+};
+
+export default Portfolio;

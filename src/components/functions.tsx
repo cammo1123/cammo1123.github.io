@@ -1,111 +1,55 @@
-import $ from "jquery";
-
-function addAnimations() {
-	document.documentElement.style.setProperty("--nav-time", "0.1s");
-}
-
-function removeAnimations() {
-	document.documentElement.style.setProperty("--nav-time", "0s");
-}
-
-export function toTitleCase(str: string) {
+const toTitleCase = (str: string) => {
 	return str.replace(/\w\S*/g, function (txt) {
 		return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
 	});
-}
+};
 
-export function getCookie(name: string) {
-	var nameEQ = name + "=";
-	var ca = document.cookie.split(";");
+const getCookie = (name: string) => {
+	const nameEQ = name + "=";
+	const ca = document.cookie.split(";");
 
-	for (var i = 0; i < ca.length; i++) {
+	for (let i = 0; i < ca.length; i++) {
 		let c = ca[i];
 		if (!c) return null;
 		while (c.charAt(0) === " ") c = c.substring(1, c.length);
 		if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-	};
-
-	return  null;
-}
-
-export function setCookie(name: string, value: string, days: number) {
-	var expires = "";
-	if (days) {
-		var date = new Date();
-		date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-		expires = "; expires=" + date.toUTCString();
 	}
+
+	return null;
+};
+
+const setCookie = (name: string, value: string, days: number) => {
+	const date = new Date();
+	date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+	const expires = "; expires=" + date.toUTCString();
+
 	document.cookie = name + "=" + (value || "") + expires + "; path=/; Secure";
-}
+};
 
 let prevPage = "";
 
-export function setPage(page: string, animations = true) {
+const setPage = (page: string, animations = true) => {
 	page = page === "" ? "home" : page;
-	if (!animations) removeAnimations();
+	if (!animations) document.documentElement.style.setProperty("--nav-time", "0s");
 
 	document.title = "Cameron | " + toTitleCase(page);
 
-	page = "#" + page;
+	const pageElement = document.getElementById(page);
+	const navCover = document.getElementById("active_cover");
 
-	let pos = $(page).offset();
+	if (pageElement && navCover) {
+		const rect = pageElement.getBoundingClientRect();
 
-	if (pos !== undefined) {
-		if (prevPage !== "") {
-			$("#" + prevPage).removeClass("active");
-		}
+		document.getElementById(prevPage)?.classList.remove("active");
+		pageElement.classList.add("active");
 
-		$(page).addClass("active");
+		const navHeight = navCover.children[0]?.getBoundingClientRect().height ?? 0;
+		navCover.style.setProperty("top", `${rect.y - navHeight}px`);
 
-		let my_pos = $("#active_cover");
-		const height = my_pos.height() ?? 0;
-
-		let my_pos_height = height + 24;
-
-		$("#top_fill").css("bottom", window.innerHeight - (pos.top - height + 24) - 14 + window.pageYOffset);
-		$("#bottom_fill").css("top", my_pos_height + (pos.top - height + 24) + 14 - window.pageYOffset);
-		$("#active_cover").css("top", pos.top - height + 24 + 14 - window.pageYOffset);
-		prevPage = page.slice(1);
+		prevPage = page;
 	}
 
-	if (!animations) addAnimations();
-}
+	if (!animations) document.documentElement.style.setProperty("--nav-time", "0.1s");
+};
 
-export function setDark(_: any, dontInvert = false) {
-	let dark = getCookie("dark") === dontInvert + "";
-
-	if (!dark) {
-		document.documentElement.style.setProperty("--background-color", "#fff");
-		document.documentElement.style.setProperty("--text-color", "#000");
-		document.documentElement.style.setProperty("--shadow-color", "#cbcbcb");
-	} else {
-		document.documentElement.style.setProperty("--background-color", "#181a1b");
-		document.documentElement.style.setProperty("--text-color", "#e8e6e3");
-		document.documentElement.style.setProperty("--shadow-color", "#0B0B0B");
-	}
-
-	setCookie("dark", `${dark}`, 30);
-}
-
-export function setCollapsed(_: any, dontInvert = false) {
-	let collapsed = getCookie("collapsed") === dontInvert + "";
-	setCookie("collapsed", collapsed + "", 30);
-
-	if (!collapsed) {
-		document.documentElement.style.setProperty("--toolbar-width", "300px");
-		document.documentElement.style.setProperty("--toolbar-text", "unset");
-		document.documentElement.style.setProperty("--nav-color", "#23a6d5");
-
-		$("#collapse").html("<i class='bx bxs-chevron-left'></i>");
-
-		return "left";
-	} else {
-		document.documentElement.style.setProperty("--toolbar-width", "50px");
-		document.documentElement.style.setProperty("--toolbar-text", "none");
-		document.documentElement.style.setProperty("--nav-color", "transparent");
-
-		$("#collapse").html("<i class='bx bxs-chevron-right'></i>");
-
-		return "right";
-	}
-}
+export { toTitleCase, getCookie, setCookie, setPage };

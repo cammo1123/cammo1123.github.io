@@ -3,14 +3,14 @@ import { PageContent, PageSection, LinkToNewSite } from "../../components/page";
 
 import "./style.scss";
 
-export default function Socials() {
+const Socials = () => {
 	setPage("socials");
 
 	return (
 		<PageContent name="socials">
 			<PageSection name="message" className="gradient fullpage center">
-				<h1 className="tx-center">Add my Socials</h1>
-				<ul className="socialLinks">
+				<h1 class="tx-center">Add my Socials</h1>
+				<ul class="socialLinks">
 					<LinkToNewSite icon="instagram" url="https://instagram.com/cammo1123" />
 					<LinkToNewSite icon="snapchat" url="https://snapchat.com/add/cammo11233" />
 					<LinkToNewSite icon="twitter" url="https://twitter.com/cammo1123" />
@@ -20,4 +20,6 @@ export default function Socials() {
 			</PageSection>
 		</PageContent>
 	);
-}
+};
+
+export default Socials;
