@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { LINK } from "../..";
+import { Component } from "react";
+import { Link } from "react-router-dom";
 import { setCollapsed, setDark, toTitleCase } from "../functions";
 
 import "./style.scss";
 
 export class NavCover extends Component {
-	render() {
+	override render() {
 		return (
 			<div className="cover">
 				<div id="top_fill"></div>
@@ -48,10 +48,10 @@ export function NavItem(props: { path?: string; name?: string; id: string; iconN
 	return (
 		<div className="navItem" id={props.id}>
 			<li>
-				<LINK to={path}>
+				<Link to={path}>
 					<i className={"bx " + props.iconName}></i>
 					<span>{name}</span>
-				</LINK>
+				</Link>
 			</li>
 		</div>
 	);

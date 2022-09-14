@@ -1,5 +1,5 @@
 import "./style.scss";
-import React, { Component } from "react";
+import { Component } from "react";
 
 interface Repo {
 	full_name: string;
@@ -35,7 +35,7 @@ export class GitHubSearch extends Component<Props, State> {
 			});
 	}
 
-	async componentDidMount() {
+	override async componentDidMount() {
 		let repos: Repo[] = await this.getUserRepo("cammo1123");
 		this.setState({ repos: repos });
 	}
@@ -46,20 +46,17 @@ export class GitHubSearch extends Component<Props, State> {
 		this.setState({ repos: repos });
 	}
 
-	render() {
-		let repos = [];
+	override render() {
+		let repos: JSX.Element[] = [];
 
-		if (this.state.repos) {
-			for (let i = 0; i < this.state.repos.length; i++) {
-				let repo = this.state.repos[i];
-				if (repo.private) break;
-				repos.push(
-					<GithubCard name={repo.full_name} url={repo.html_url} forks={repo.forks_count} stars={repo.stargazers_count}>
-						{repo.description}
-					</GithubCard>
-				);
-			}
-		}
+		this.state.repos.forEach(repo => {
+			if (repo.private) return
+			repos.push(
+				<GithubCard name={repo.full_name} url={repo.html_url} forks={repo.forks_count} stars={repo.stargazers_count}>
+					{repo.description}
+				</GithubCard>
+			);
+		});
 
 		return (
 			<div className="githubSearch">

@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route, Link, } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./index.scss";
 
@@ -9,7 +9,6 @@ import { PageContent, PageSection } from "./components/page";
 import { NavBar, NavItem } from "./components/navbar";
 
 let arrowDir = setCollapsed(null, true);
-export let LINK = Link;
 
 const Home = lazy(() => import("./pages/home"));
 const Socials = lazy(() => import("./pages/socials"));
