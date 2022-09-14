@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter, Routes, Route, Link, } from "react-router-dom";
 
 import "./index.scss";
 
@@ -16,9 +16,9 @@ const Home = lazy(() => import("./pages/home"));
 const Projects = lazy(() => import("./pages/projects"));
 const Portfolio = lazy(() => import("./pages/portfolio"));
 
-ReactDOM.render(
-	<React.StrictMode>
-		<Router>
+const App = () => {
+	return <React.StrictMode>
+		<BrowserRouter>
 			<NavBar arrowDir={arrowDir}>
 				<NavItem id="home" iconName="bx-home" path="/" />
 				<NavItem id="socials" iconName="bx-message" />
@@ -34,17 +34,19 @@ ReactDOM.render(
 					</PageContent>
 				}
 			>
-				<Switch>
-					<Route exact path="/" component={Home} />
-					<Route path="/socials" component={Socials} />
-					<Route path="/portfolio" component={Portfolio} />
-					<Route path="/projects" component={Projects} />
-				</Switch>
+				<Routes>
+					<Route exact path="/" element={<Home />} />
+					<Route path="/socials" element={<Socials />} />
+					<Route path="/portfolio" element={<Portfolio />} />
+					<Route path="/projects" element={<Projects />} />
+				</Routes>
 			</Suspense>
-		</Router>
-	</React.StrictMode>,
-	document.getElementById("root")
-);
+		</BrowserRouter>
+	</React.StrictMode>
+}
+
+const root = createRoot(document.getElementById("root"));
+root.render(<App />);
 
 window.addEventListener("resize", () => {
 	let path = window.location.pathname;
