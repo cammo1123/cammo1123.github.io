@@ -19,7 +19,7 @@ export class NavCover extends Component {
 	}
 }
 
-export function NavBar(props) {
+export function NavBar(props: { arrowDir: string; children: any }) {
 	return (
 		<nav>
 			<NavCover />
@@ -39,7 +39,7 @@ export function NavBar(props) {
 	);
 }
 
-export function NavItem(props) {
+export function NavItem(props: { path?: string; name?: string; id: string; iconName: string }) {
 	let name, path;
 
 	path = props.path === undefined ? "/" + props.id : props.path;

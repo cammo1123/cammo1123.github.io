@@ -11,8 +11,8 @@ import { NavBar, NavItem } from "./components/navbar";
 let arrowDir = setCollapsed(null, true);
 export let LINK = Link;
 
-const Socials = lazy(() => import("./pages/socials"));
 const Home = lazy(() => import("./pages/home"));
+const Socials = lazy(() => import("./pages/socials"));
 const Projects = lazy(() => import("./pages/projects"));
 const Portfolio = lazy(() => import("./pages/portfolio"));
 
@@ -35,7 +35,7 @@ const App = () => {
 				}
 			>
 				<Routes>
-					<Route exact path="/" element={<Home />} />
+					<Route path="/" element={<Home />} />
 					<Route path="/socials" element={<Socials />} />
 					<Route path="/portfolio" element={<Portfolio />} />
 					<Route path="/projects" element={<Projects />} />
@@ -45,8 +45,11 @@ const App = () => {
 	</React.StrictMode>
 }
 
-const root = createRoot(document.getElementById("root"));
-root.render(<App />);
+const rootElement = document.getElementById("root");;
+if (rootElement) {
+	const root = createRoot(rootElement);
+	root.render(<App />);
+}
 
 window.addEventListener("resize", () => {
 	let path = window.location.pathname;

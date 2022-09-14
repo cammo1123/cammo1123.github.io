@@ -8,13 +8,13 @@ function removeAnimations() {
 	document.documentElement.style.setProperty("--nav-time", "0s");
 }
 
-export function toTitleCase(str) {
+export function toTitleCase(str: string) {
 	return str.replace(/\w\S*/g, function (txt) {
 		return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
 	});
 }
 
-export function getCookie(name) {
+export function getCookie(name: string) {
 	var nameEQ = name + "=";
 	var ca = document.cookie.split(";");
 	for (var i = 0; i < ca.length; i++) {
@@ -25,7 +25,7 @@ export function getCookie(name) {
 	return null;
 }
 
-export function setCookie(name, value, days) {
+export function setCookie(name: string, value: string, days: number) {
 	var expires = "";
 	if (days) {
 		var date = new Date();
@@ -37,7 +37,7 @@ export function setCookie(name, value, days) {
 
 let prevPage = "";
 
-export function setPage(page, animations = true) {
+export function setPage(page: string, animations = true) {
 	page = page === "" ? "home" : page;
 	if (!animations) removeAnimations();
 
@@ -55,19 +55,20 @@ export function setPage(page, animations = true) {
 		$(page).addClass("active");
 
 		let my_pos = $("#active_cover");
+		const height = my_pos.height() ?? 0;
 
-		let my_pos_height = my_pos.height() + 24;
+		let my_pos_height = height + 24;
 
-		$("#top_fill").css("bottom", window.innerHeight - (pos.top - my_pos.height() + 24) - 14 + window.pageYOffset);
-		$("#bottom_fill").css("top", my_pos_height + (pos.top - my_pos.height() + 24) + 14 - window.pageYOffset);
-		$("#active_cover").css("top", pos.top - my_pos.height() + 24 + 14 - window.pageYOffset);
+		$("#top_fill").css("bottom", window.innerHeight - (pos.top - height + 24) - 14 + window.pageYOffset);
+		$("#bottom_fill").css("top", my_pos_height + (pos.top - height + 24) + 14 - window.pageYOffset);
+		$("#active_cover").css("top", pos.top - height + 24 + 14 - window.pageYOffset);
 		prevPage = page.slice(1);
 	}
 
 	if (!animations) addAnimations();
 }
 
-export function setDark(NULL, dontInvert = false) {
+export function setDark(_: any, dontInvert = false) {
 	let dark = getCookie("dark") === dontInvert + "";
 
 	if (!dark) {
@@ -83,7 +84,7 @@ export function setDark(NULL, dontInvert = false) {
 	setCookie("dark", `${dark}`, 30);
 }
 
-export function setCollapsed(NULL, dontInvert = false) {
+export function setCollapsed(_: any, dontInvert = false) {
 	let collapsed = getCookie("collapsed") === dontInvert + "";
 	setCookie("collapsed", collapsed + "", 30);
 

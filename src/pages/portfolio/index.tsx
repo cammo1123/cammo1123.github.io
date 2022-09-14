@@ -15,8 +15,8 @@ export default function Portfolio() {
 			<PageSection name="mid-section">
 				<h1>Some of my Best Projects</h1>
 				<div className="githubGrid">
-					<GithubCard name="cammo1123/Plex-Player" forks="0" stars="1" url="https://github.com/cammo1123/Plex-Player"></GithubCard>
-					<GithubCard name="cammo1123/cammo1123.github.io" forks="0" stars="1" url="https://github.com/cammo1123/cammo1123/github.io"></GithubCard>
+					<GithubCard name="cammo1123/Plex-Player" forks={0} stars={0} url="https://github.com/cammo1123/Plex-Player"> </GithubCard>
+					<GithubCard name="cammo1123/cammo1123.github.io" forks={0} stars={0} url="https://github.com/cammo1123/cammo1123/github.io"> </GithubCard>
 				</div>
 			</PageSection>
 		</PageContent>
