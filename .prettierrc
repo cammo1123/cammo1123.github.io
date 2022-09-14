@@ -1,0 +1,9 @@
+{
+	"tabWidth": 4,
+	"useTabs": true,
+	"proseWrap": "preserve",
+	"semi": true,
+	"quoteProps": "consistent",
+	"bracketSameLine": true,
+	"printWidth": 120
+}

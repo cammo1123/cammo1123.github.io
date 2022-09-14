@@ -4,46 +4,28 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
-		"jquery": "^3.6.1",
-		"node-sass": "^7.0.3",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
-		"react-router-dom": "^6.4.0",
-		"react-scripts": "^5.0.1",
-		"typescript": "^4.8.3"
+		"@solidjs/router": "^0.4.3",
+		"sass": "^1.54.9",
+		"solid-js": "^1.5.1"
 	},
 	"scripts": {
 		"predeploy": "yarn run build",
 		"deploy": "echo 'cammo1123.dev' > ./build/CNAME && gh-pages -d build",
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject"
-	},
-	"eslintConfig": {
-		"extends": [
-			"react-app",
-			"react-app/jest"
-		]
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
+		"start": "vite",
+		"build": "vite build",
+		"test": "vite test",
+		"eject": "vite eject",
+		"format": "prettier --write .",
+		"lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue src"
 	},
 	"devDependencies": {
-		"@types/jest": "^29.0.2",
 		"@types/jquery": "^3.5.14",
-		"@types/node": "^18.7.18",
-		"@types/react": "^18.0.20",
-		"@types/react-dom": "^18.0.6",
-		"gh-pages": "^4.0.0"
+		"@typescript-eslint/eslint-plugin": "^5.37.0",
+		"@typescript-eslint/parser": "^5.37.0",
+		"eslint": "^8.23.1",
+		"gh-pages": "^4.0.0",
+		"typescript": "^4.8.2",
+		"vite": "^3.0.9",
+		"vite-plugin-solid": "^2.3.0"
 	}
 }
