@@ -13,8 +13,6 @@
 		"deploy": "echo 'cammo1123.dev' > ./build/CNAME && gh-pages -d build",
 		"start": "vite",
 		"build": "vite build",
-		"test": "vite test",
-		"eject": "vite eject",
 		"format": "prettier --write .",
 		"lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue src"
 	},
