@@ -3,10 +3,9 @@ import { Component, createSignal, JSX } from "solid-js";
 import { getCookie, setCookie, toTitleCase } from "../functions";
 
 import "./style.scss";
+const [collapsed, setCollapsed] = createSignal(getCookie("collapsed") === "true");
 
 const NavBar: Component<{ children: JSX.Element }> = (props) => {
-	const [collapsed, setCollapsed] = createSignal(getCookie("collapsed") === "true");
-
 	return (
 		<div class={collapsed() ? "navbar collapsed" : "navbar showing"}>
 			<NavCover />
@@ -19,6 +18,7 @@ const NavBar: Component<{ children: JSX.Element }> = (props) => {
 						Made with SolidJS and Typescript
 					</span>
 					<button
+						aria-label="collapse"
 						id="collapse"
 						onClick={() => {
 							const newCollapsed = !collapsed();
@@ -37,22 +37,33 @@ const NavCover = () => {
 	return (
 		<div class="active_cover" id="active_cover">
 			<div class="child"></div>
-			<NavItem class="hidden" id="null" iconName="bx-message" />
+			<ul>
+				<NavItem class="hidden" id="null" iconName="bx-message" />
+			</ul>
 			<div class="child2"></div>
 		</div>
 	);
 };
 
 const NavItem = (props: { path?: string; name?: string; id: string; iconName: string; class?: string }) => {
+	const name = props.name || toTitleCase(props.id);
+
 	return (
-		<div class={`navItem ${props.class ?? ""}`} id={props.id}>
-			<li>
-				<Link href={props.path ?? "/" + props.id}>
+		<li class={`navItem ${props.class ?? ""}`} id={props.id}>
+			<div class="item_content">
+				<Link aria-label={name} href={props.path ?? "/" + props.id}>
 					<i class={"bx " + props.iconName}></i>
-					<span>{props.name ?? toTitleCase(props.id)}</span>
+					<span>{name}</span>
 				</Link>
-			</li>
-		</div>
+			</div>
+			{() => {
+				if (collapsed()) {
+					return <div class="onHover">{name}</div>;
+				} else {
+					return <></>;
+				}
+			}}
+		</li>
 	);
 };
 

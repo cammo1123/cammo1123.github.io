@@ -19,7 +19,7 @@ const ContentPane = (props: { children: JSX.Element }) => {
 const LinkToNewSite = (props: { icon: string; url: string }) => {
 	return (
 		<li>
-			<a target="_blank" rel="noreferrer" href={props.url}>
+			<a aria-label={props.icon} target="_blank" rel="noreferrer" href={props.url}>
 				<i class={"bx bxl-" + props.icon}></i>
 			</a>
 		</li>

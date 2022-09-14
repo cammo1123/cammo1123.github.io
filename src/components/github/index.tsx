@@ -20,7 +20,10 @@ const GitHubSearch: Component = () => {
 		const data = await response.json();
 		const message: string = data.message;
 
-		if (data.message === "Not Found") {
+		if (!message) {
+			setRepos(data);
+			setStatus("Results");
+		} else if (message.includes("Not Found")) {
 			setRepos([]);
 			setStatus("User not found");
 			return;
@@ -29,8 +32,6 @@ const GitHubSearch: Component = () => {
 			setStatus("API rate limit exceeded");
 			return;
 		}
-
-		setRepos(data);
 	};
 
 	onMount(async () => {
@@ -74,7 +75,7 @@ const GitHubSearch: Component = () => {
 
 const GithubCard = (props: { name?: string; url: string; description?: string; forks?: number; stars?: number }) => {
 	return (
-		<a href={props.url} target="_blank" rel="noreferrer" class="githubCard">
+		<a aria-label={props.name ?? ""} href={props.url} target="_blank" rel="noreferrer" class="githubCard">
 			<h1>{props.name}</h1>
 			<p>{props.description ?? ""}</p>
 			<span>
