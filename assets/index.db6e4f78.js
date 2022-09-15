@@ -1,1 +1,0 @@
-import{s as t,c as e,P as r,a}from"./index.644377d0.js";import{G as n}from"./index.917e10c1.js";function c(){return t("projects"),e(a,{name:"projects",get children(){return e(r,{get children(){return e(n,{})}})}})}export{c as default};

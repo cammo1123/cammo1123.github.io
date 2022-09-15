@@ -1,1 +1,0 @@
-import{s as n,c as e,P as a,a as o,t}from"./index.644377d0.js";const r=t("<h1>Cameron</h1>"),s=t("<sub>I'm Pretty Cool (I Think)</sub>");function l(){return n("home"),e(o,{name:"home",get children(){return e(a,{name:"message",className:"gradient fullpage center",get children(){return[r.cloneNode(!0),s.cloneNode(!0)]}})}})}export{l as default};
