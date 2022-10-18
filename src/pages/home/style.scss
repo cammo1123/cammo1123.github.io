@@ -11,4 +11,12 @@
 	.message {
 		color: var(--text-color-light);
 	}
+
+	.split {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+
+		padding: clamp(1rem, 2vw, 2rem);
+	}
 }

@@ -4,9 +4,9 @@ const PageContent = (props: { name: string; children: JSX.Element }) => {
 	return <div class={props.name}>{props.children}</div>;
 };
 
-const PageSection = (props: { name?: string; className?: string; children: JSX.Element }) => {
+const PageSection = (props: { name?: string; class?: string; children: JSX.Element }) => {
 	return (
-		<section class={`${props.name ?? ""} ${props.className ?? ""}`}>
+		<section class={`${props.name ?? ""} ${props.class ?? ""}`}>
 			<div class="content">{props.children}</div>
 		</section>
 	);

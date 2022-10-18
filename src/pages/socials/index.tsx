@@ -8,8 +8,8 @@ const Socials = () => {
 
 	return (
 		<PageContent name="socials">
-			<PageSection name="message" className="gradient fullpage center">
-				<h1 class="tx-center">Add my Socials</h1>
+			<PageSection name="message" class="gradient fullpage center">
+				<h1 class="tx-center">Add me on Social Media</h1>
 				<ul class="socialLinks">
 					<LinkToNewSite icon="instagram" url="https://instagram.com/cammo1123" />
 					<LinkToNewSite icon="snapchat" url="https://snapchat.com/add/cammo11233" />

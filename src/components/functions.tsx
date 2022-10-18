@@ -32,7 +32,7 @@ const setPage = (page: string, animations = true) => {
 	page = page === "" ? "home" : page;
 	if (!animations) document.documentElement.style.setProperty("--nav-time", "0s");
 
-	document.title = "Cameron | " + toTitleCase(page);
+	document.title = "Cameron Youell | " + toTitleCase(page);
 
 	const pageElement = document.getElementById(page);
 	const navCover = document.getElementById("active_cover");
