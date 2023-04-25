@@ -35,33 +35,26 @@ const NavBar: Component<{ children: JSX.Element }> = (props) => {
 const NavCover = () => {
 	return (
 		<div class="active_cover" id="active_cover">
-			<div class="child"></div>
 			<ul>
 				<NavItem class="hidden" id="null" iconName="bx-message" />
 			</ul>
-			<div class="child2"></div>
 		</div>
 	);
 };
 
 const NavItem = (props: { path?: string; name?: string; id: string; iconName: string; class?: string }) => {
-	const name = props.name || toTitleCase(props.id);
+	const itemName = props.name || toTitleCase(props.id);
+	const itemClass = props.class || "";
 
 	return (
-		<li class={`navItem ${props.class ?? ""}`} id={props.id}>
+		<li class={`navItem ${itemClass}`} id={props.id}>
 			<div class="item_content">
-				<Link aria-label={name} href={props.path ?? "/" + props.id}>
+				<Link aria-label={itemName} href={props.path ?? "/" + props.id}>
 					<i class={"bx " + props.iconName}></i>
-					<span>{name}</span>
+					<span>{itemName}</span>
 				</Link>
 			</div>
-			{() => {
-				if (collapsed()) {
-					return <div class="onHover">{name}</div>;
-				} else {
-					return <></>;
-				}
-			}}
+			<div class="onHover">{itemName}</div>
 		</li>
 	);
 };

@@ -43,8 +43,7 @@ const setPage = (page: string, animations = true) => {
 		document.getElementById(prevPage)?.classList.remove("active");
 		pageElement.classList.add("active");
 
-		const navHeight = navCover.children[0]?.getBoundingClientRect().height ?? 0;
-		navCover.style.setProperty("top", `${rect.y - navHeight}px`);
+		navCover.style.setProperty("top", `${rect.top}px`);
 
 		prevPage = page;
 	}

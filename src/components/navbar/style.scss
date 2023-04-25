@@ -17,6 +17,27 @@ $mainSize: 10px;
 		--toolbar-width: 50px !important;
 		--toolbar-text: none !important;
 		--toolbar-padding-right: 0px;
+
+		:is(:hover, :focus) > .onHover {
+			display: flex;
+			position: absolute;
+			top: 0px;
+			bottom: 0px;
+			left: 100%;
+
+			background: lighten($color: #11101d, $amount: 5);
+
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			border-radius: 0 $mainSize $mainSize 0;
+
+			padding: 0px $mainSize;
+		}
+	}
+
+	.navItem > .onHover {
+		display: none;
 	}
 
 	nav {
@@ -56,6 +77,7 @@ $mainSize: 10px;
 .navItem {
 	list-style: none;
 	position: relative;
+
 	.item_content {
 		height: 50px;
 		width: 100%;
@@ -83,27 +105,6 @@ $mainSize: 10px;
 			display: var(--toolbar-text);
 		}
 	}
-
-	.onHover {
-		display: none;
-	}
-
-	&:is(:hover, :focus) > .onHover {
-		display: flex;
-		position: absolute;
-		top: 0px;
-		bottom: 0px;
-		left: 100%;
-
-		background: lighten($color: #11101d, $amount: 5);
-
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		border-radius: 0 $mainSize $mainSize 0;
-
-		padding: 0px $mainSize;
-	}
 }
 
 .active_cover {
@@ -111,13 +112,6 @@ $mainSize: 10px;
 	padding-right: var(--toolbar-padding-right);
 	width: var(--toolbar-width);
 	transition: top var(--nav-time) linear;
-	background-image: linear-gradient(90deg, var(--nav-color) 0%, var(--nav-color) 50%, transparent 50%);
-
-	.child {
-		height: $mainSize;
-		border-radius: 0 0 0 $mainSize;
-		background: #11101d;
-	}
 
 	ul {
 		list-style: none;
@@ -133,12 +127,6 @@ $mainSize: 10px;
 				opacity: 0;
 			}
 		}
-	}
-
-	.child2 {
-		height: $mainSize;
-		border-radius: $mainSize 0 0 0;
-		background: #11101d;
 	}
 }
 
