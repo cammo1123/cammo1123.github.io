@@ -13,7 +13,7 @@ const NavBar: Component<{ children: JSX.Element }> = (props) => {
 				<ul>{props.children}</ul>
 				<footer>
 					<span id="copyright">
-						Copyright (c) Cameron Youell - 2022
+						Copyright (c) Cameron Youell - 2023
 						<br />
 						Made with SolidJS and Typescript
 					</span>
