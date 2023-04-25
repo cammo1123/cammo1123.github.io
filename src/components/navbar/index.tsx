@@ -3,11 +3,17 @@ import { Component, createSignal, JSX } from "solid-js";
 import { getCookie, setCookie, toTitleCase } from "../functions";
 
 import "./style.scss";
-const [collapsed, setCollapsed] = createSignal(getCookie("collapsed") === "true");
+const [navShowing, setNavShowing] = createSignal(getCookie("navShowing") === "true");
 
 const NavBar: Component<{ children: JSX.Element }> = (props) => {
+	const onNavClick = () => {
+		const newCollapsed = !navShowing();
+		setCookie("navShowing", newCollapsed.toString(), 365);
+		setNavShowing(newCollapsed);
+	};
+
 	return (
-		<div class={collapsed() ? "navbar collapsed" : "navbar showing"}>
+		<div class={`navbar ${navShowing() ? "showing" : "collapsed"}`}>
 			<NavCover />
 			<nav>
 				<ul>{props.children}</ul>
@@ -17,15 +23,8 @@ const NavBar: Component<{ children: JSX.Element }> = (props) => {
 						<br />
 						Made with SolidJS and Typescript
 					</span>
-					<button
-						aria-label="collapse"
-						id="collapse"
-						onClick={() => {
-							const newCollapsed = !collapsed();
-							setCookie("collapsed", newCollapsed.toString(), 365);
-							setCollapsed(newCollapsed);
-						}}>
-						{collapsed() ? <i class="bx bxs-chevron-right"></i> : <i class="bx bxs-chevron-left"></i>}
+					<button aria-label="collapse" id="collapse" onClick={onNavClick}>
+						<i class={`bx bxs-chevron-${navShowing() ? "left" : "right"}`}></i>
 					</button>
 				</footer>
 			</nav>
