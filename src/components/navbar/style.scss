@@ -113,6 +113,10 @@ $mainSize: 10px;
 	width: var(--toolbar-width);
 	transition: top var(--nav-time) linear;
 
+	&.hovering .navItem {
+		border-radius: 0px;
+	}
+
 	ul {
 		list-style: none;
 		padding: 0px;
@@ -122,6 +126,7 @@ $mainSize: 10px;
 			background: var(--nav-color);
 			opacity: 1;
 			border-radius: 0 $mainSize $mainSize 0;
+			transition: border-radius 100ms linear;
 
 			div {
 				opacity: 0;

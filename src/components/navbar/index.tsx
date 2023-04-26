@@ -12,6 +12,19 @@ const NavBar: Component<{ children: JSX.Element }> = (props) => {
 		setNavShowing(newCollapsed);
 	};
 
+	const mouseMove = (e: MouseEvent) => {
+		let cover = document.getElementById("active_cover");
+		if (!cover) return;
+
+		let rect = cover.getBoundingClientRect();
+		if (rect.top < e.clientY && e.clientY < rect.bottom && rect.left < e.clientX && e.clientX < rect.right) {
+			cover.classList.add("hovering");
+		} else {
+			cover.classList.remove("hovering");
+		}
+	};
+
+	document.addEventListener("mousemove", mouseMove);
 	return (
 		<div class={`navbar ${navShowing() ? "showing" : "collapsed"}`}>
 			<NavCover />
