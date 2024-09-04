@@ -8,15 +8,40 @@
 		font-size: 1rem;
 	}
 
-	.message {
-		color: var(--text-color-light);
+	.split {
+		padding: 1rem;
+
+		& > .content > h1 {
+			margin: 0;
+		}
+	}
+}
+
+.socialLinks {
+	display: inline-flex;
+	list-style: none;
+	flex-wrap: wrap;
+	width: 100%;
+	padding: 0px;
+	justify-content: center;
+	margin: 0px;
+
+	& > li {
+		padding: 1rem;
+		font-size: 60pt;
 	}
 
-	.split {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
+	& > li > a {
+		text-decoration: none;
+		color: var(--text-color);
+	}
 
-		padding: clamp(1rem, 2vw, 2rem);
+	@media screen and (max-width: 800px) {
+		& {
+			flex-direction: row;
+			width: 100%;
+			display: flex;
+			justify-content: space-evenly;
+		}
 	}
 }

@@ -7,8 +7,19 @@
 	--toolbar-text: none;
 	--shadow-color: #cbcbcb;
 	--nav-color: transparent;
-	--text-color-light: #fff;
 	--nav-time: 0.1s;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--text-color: #fff;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--text-color: #000;
+	}
 }
 
 * {
@@ -47,19 +58,6 @@ body {
 	}
 	100% {
 		background-position: 0% 51%;
-	}
-}
-
-#root {
-	display: grid;
-	grid-template-columns: auto 1fr;
-	max-height: 100vh;
-	overflow: hidden;
-
-	#content {
-		overflow-y: auto;
-		overflow-x: auto;
-		height: 100vh;
 	}
 }
 
