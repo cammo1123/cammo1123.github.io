@@ -1,3 +1,4 @@
+import { MetaProvider, Title } from "@solidjs/meta";
 import { JSX } from "solid-js";
 
 const PageContent = (props: { name: string; children: JSX.Element }) => {
@@ -26,4 +27,12 @@ const LinkToNewSite = (props: { icon: string; url: string }) => {
 	);
 };
 
-export { ContentPane, PageContent, PageSection, LinkToNewSite };
+const SiteTitle = (props: { children: JSX.Element }) => {
+	return (
+		<MetaProvider>
+			<Title>{props.children} | Cameron Youell</Title>
+		</MetaProvider>
+	);
+};
+
+export { ContentPane, PageContent, PageSection, LinkToNewSite, SiteTitle };

@@ -1,0 +1,76 @@
+.acom1001 {
+	& > .head {
+		display: flex;
+		min-height: 30vh;
+		align-items: center;
+		justify-content: center;
+		background-image: url(https://defaultcustomheadersdata.wordpress.com/wp-content/uploads/2016/07/design2.jpg?resize=1080,426);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	& .island {
+		max-width: 80vw;
+		padding: 2rem;
+		height: auto;
+		text-align: center;
+		background: rgba(var(--background-color), 0.25);
+		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+		backdrop-filter: blur(4px);
+		-webkit-backdrop-filter: blur(4px);
+		border-radius: 10px;
+
+		h1 {
+			font-size: 1.8rem;
+		}
+
+		p {
+			font-size: 1rem;
+		}
+	}
+
+	// @media (max-width: 768px) {
+	// 	.island {
+	// 		width: 90vw;
+	// 		padding: 1.5rem;
+
+	// 		h1 {
+	// 			font-size: 1.5rem;
+	// 		}
+
+	// 		p {
+	// 			font-size: 0.9rem;
+	// 		}
+	// 	}
+	// }
+
+	@media (max-width: 600px) {
+		 .head {
+			align-items: stretch;
+			padding: 0;
+
+			& > .island {
+				width: 100%;
+				padding: 1rem;
+				max-width: unset;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+
+				hr {
+					width: 100%;
+				}
+
+				h1 {
+					font-size: 1.3rem;
+				}
+
+				p {
+					font-size: 0.8rem;
+				}
+			}
+		}
+	}
+}
