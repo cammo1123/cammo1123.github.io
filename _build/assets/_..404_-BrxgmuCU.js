@@ -1,0 +1,1 @@
+import{j as e,q as o,z as t}from"./index-BJnsedz8.js";import{S as a}from"./index-D0G7YXpy.js";var r=t("<div class=lost-404><h1>404</h1><p>Oops! The page you're looking for can't be found.</p><a href=/ class=home-link>Go back home");function s(){return[e(a,{children:"404 Not Found"}),o(r)]}export{s as default};
