@@ -1,57 +1,60 @@
 {
-  "_index-BJnsedz8.js": {
-    "file": "assets/index-BJnsedz8.js",
+  "_index-C4IFt4X3.js": {
+    "file": "assets/index-C4IFt4X3.js",
     "name": "index"
   },
-  "_index-D0G7YXpy.js": {
-    "file": "assets/index-D0G7YXpy.js",
-    "name": "index",
+  "_style-!~{005}~.js": {
+    "file": "assets/style-DIJS_SVL.css",
+    "src": "_style-!~{005}~.js"
+  },
+  "_style-!~{006}~.js": {
+    "file": "assets/style-CqHC4k74.css",
+    "src": "_style-!~{006}~.js"
+  },
+  "_style-BWFzO6jZ.js": {
+    "file": "assets/style-BWFzO6jZ.js",
+    "name": "style",
     "imports": [
-      "_index-BJnsedz8.js"
+      "_index-C4IFt4X3.js"
+    ],
+    "css": [
+      "assets/style-DIJS_SVL.css"
     ]
   },
   "src/routes/acom1001/index.tsx?pick=default&pick=$css": {
-    "file": "assets/index-BWauLM0T.js",
+    "file": "assets/index-DWV3PJzL.js",
     "name": "index",
     "src": "src/routes/acom1001/index.tsx?pick=default&pick=$css",
     "isEntry": true,
-    "isDynamicEntry": true,
     "imports": [
-      "_index-BJnsedz8.js",
-      "_index-D0G7YXpy.js"
-    ],
-    "css": [
-      "assets/index-DIJS_SVL.css"
+      "_index-C4IFt4X3.js",
+      "_style-BWFzO6jZ.js"
     ]
   },
   "src/routes/index.tsx?pick=default&pick=$css": {
-    "file": "assets/index-C7OyQAeW.js",
+    "file": "assets/index-BZEKbdiI.js",
     "name": "index",
     "src": "src/routes/index.tsx?pick=default&pick=$css",
     "isEntry": true,
-    "isDynamicEntry": true,
     "imports": [
-      "_index-BJnsedz8.js",
-      "_index-D0G7YXpy.js"
+      "_index-C4IFt4X3.js"
     ],
     "css": [
-      "assets/index-CqHC4k74.css"
+      "assets/style-CqHC4k74.css"
     ]
   },
   "virtual:$vinxi/handler/client": {
-    "file": "assets/client-Do47bHqB.js",
+    "file": "assets/client-B6EXG_Y_.js",
     "name": "client",
     "src": "virtual:$vinxi/handler/client",
     "isEntry": true,
     "imports": [
-      "_index-BJnsedz8.js"
-    ],
-    "dynamicImports": [
-      "src/routes/index.tsx?pick=default&pick=$css",
-      "src/routes/acom1001/index.tsx?pick=default&pick=$css"
+      "_index-C4IFt4X3.js",
+      "_style-BWFzO6jZ.js"
     ],
     "css": [
-      "assets/client-D8ASkq9U.css"
+      "assets/client-D8ASkq9U.css",
+      "assets/style-CqHC4k74.css"
     ]
   }
 }
