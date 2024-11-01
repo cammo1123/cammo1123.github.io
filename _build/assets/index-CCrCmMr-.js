@@ -1,4 +1,4 @@
-import{j as t,w as s,x as n,t as r,y as l}from"./index-C4IFt4X3.js";import{W as h}from"./style-BWFzO6jZ.js";var d=l("<div class=acom1001><div class=head><div class=island><h1>Cameron Youell - Academic Writing Portfolio</h1><hr><p>This is my ACOM1001 webpage, made completely from scratch, by me!</p></div></div><div class=body>");const u=()=>{const i=[{title:"Preventative Cyber Hygiene Practices",date:new Date(Date.parse("29 May 2022")),author:"Cameron Youell",content:`
+import{j as t,w as s,x as n,y as r,t as l}from"./index-C4IFt4X3.js";import{W as h}from"./style-BWFzO6jZ.js";var d=r("<div class=acom1001><div class=head><div class=island><h1>Cameron Youell - Academic Writing Portfolio</h1><hr><p>This is my ACOM1001 webpage, made completely from scratch, by me!</p></div></div><div class=body>");function u(){const i=[{title:"Preventative Cyber Hygiene Practices",date:new Date(Date.parse("29 May 2022")),author:"Cameron Youell",content:`
             An excellent way to reduce the leading cause of the 2021 Twitch leak would be to ensure that all configuration changes are tested internally before being deployed to production servers. An excellent potential system for this would be:
             <br>
             <br>
@@ -15,4 +15,4 @@ import{j as t,w as s,x as n,t as r,y as l}from"./index-C4IFt4X3.js";import{W as 
             In the case of twitch, it would have been wise to have a template response for hacks and incidents like these. It would allow them to instantly get on top of speculation and prevent misinformed assumptions from impacting them as a business by creating internet-fueled mass panic.
             <h4>Inform users on how to minimise the impact</h4>
             Twitch should have also sent out emails to all its users, informing them to, as a precaution, change their passwords, and be on the lookout for unauthorised access to personal information. The communication between Twitch and its users would further reduce the impact on users and their businesses.
-            `}];return[t(r,{children:"ACOM1001"}),(()=>{var e=s(d),a=e.firstChild,o=a.nextSibling;return n(o,t(h,{posts:i})),e})()]};export{u as default};
+            `}];return[t(l,{children:"ACOM1001"}),(()=>{var e=s(d),a=e.firstChild,o=a.nextSibling;return n(o,t(h,{posts:i})),e})()]}export{u as default};

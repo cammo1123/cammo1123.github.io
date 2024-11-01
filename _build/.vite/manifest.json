@@ -22,7 +22,7 @@
     ]
   },
   "src/routes/acom1001/index.tsx?pick=default&pick=$css": {
-    "file": "assets/index-DWV3PJzL.js",
+    "file": "assets/index-CCrCmMr-.js",
     "name": "index",
     "src": "src/routes/acom1001/index.tsx?pick=default&pick=$css",
     "isEntry": true,
@@ -44,7 +44,7 @@
     ]
   },
   "virtual:$vinxi/handler/client": {
-    "file": "assets/client-B6EXG_Y_.js",
+    "file": "assets/client-LSlyd894.js",
     "name": "client",
     "src": "virtual:$vinxi/handler/client",
     "isEntry": true,
