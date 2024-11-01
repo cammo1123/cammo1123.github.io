@@ -19,7 +19,7 @@ jobs:
             npm run build
 
       - name: create .nojekyll
-        run: touch .output/public/.nojekyll
+        run: touch build/.nojekyll
 
       - name: deploy pages
         uses: JamesIves/github-pages-deploy-action@v4
