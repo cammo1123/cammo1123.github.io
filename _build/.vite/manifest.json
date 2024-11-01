@@ -10,22 +10,8 @@
       "_index-BJnsedz8.js"
     ]
   },
-  "src/routes/[..404].tsx?pick=default&pick=$css": {
-    "file": "assets/_..404_-BrxgmuCU.js",
-    "name": "_..404_",
-    "src": "src/routes/[..404].tsx?pick=default&pick=$css",
-    "isEntry": true,
-    "isDynamicEntry": true,
-    "imports": [
-      "_index-BJnsedz8.js",
-      "_index-D0G7YXpy.js"
-    ],
-    "css": [
-      "assets/_.-D6qDaw_a.css"
-    ]
-  },
   "src/routes/acom1001/index.tsx?pick=default&pick=$css": {
-    "file": "assets/index-BekSpr2n.js",
+    "file": "assets/index-BWauLM0T.js",
     "name": "index",
     "src": "src/routes/acom1001/index.tsx?pick=default&pick=$css",
     "isEntry": true,
@@ -53,7 +39,7 @@
     ]
   },
   "virtual:$vinxi/handler/client": {
-    "file": "assets/client-7t1HXRTM.js",
+    "file": "assets/client-Do47bHqB.js",
     "name": "client",
     "src": "virtual:$vinxi/handler/client",
     "isEntry": true,
@@ -61,7 +47,6 @@
       "_index-BJnsedz8.js"
     ],
     "dynamicImports": [
-      "src/routes/[..404].tsx?pick=default&pick=$css",
       "src/routes/index.tsx?pick=default&pick=$css",
       "src/routes/acom1001/index.tsx?pick=default&pick=$css"
     ],
